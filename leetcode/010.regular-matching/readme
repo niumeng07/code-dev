@@ -16,4 +16,5 @@ Some examples:
     isMatch("aa", ".*") → true
     isMatch("ab", ".*") → true
     isMatch("aab", "c*a*b") → true
-把*和它前面的字符做为一组
+
+动态规划求解
