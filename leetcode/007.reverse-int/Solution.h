@@ -1,7 +1,3 @@
-#include <vector>
-#include <iostream>
-#include <string>
-#include <iostream>
 #include <limits>
 using namespace std;
 class Solution
@@ -9,8 +5,14 @@ class Solution
 public:
 	int reverse(int input) 
 	{
-        int sign = (input > 0) ? 1 : -1;
-        long tmp = input * sign;
-        cout << tmp << endl;
+        long result = 0;
+        while(input != 0)
+        {
+            result = result * 10 + input % 10;
+            if ( result > numeric_limits<int>::max() || result <numeric_limits<int>::min() )
+                return 0;
+            input = input /10;
+        }
+        return result;
 	}
 };
