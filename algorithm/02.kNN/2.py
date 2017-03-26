@@ -5,6 +5,7 @@
 #kNN简单例子
 from numpy import *
 import operator
+import sys, os
 
 random.rand(4,4)
 randMat=mat(random.rand(4,4))
@@ -12,15 +13,14 @@ randMatI=randMat.I
 
 import kNN
 group,labels=kNN.createDataSet()
-
 print(group)
 print(labels)
 
 result=kNN.classify0([0,0],group,labels,3)
+print("result: ", result)
+print("classify [1,1] result: ", kNN.classify0([1,1],group,labels,3))
 
-print(result)
-print(kNN.classify0([1,1],group,labels,3))
-
+sys.exit(0)
 #reload(kNN)
 datingDataMat,datingLabels=kNN.file2matrix('datingTestSet2.txt')
 print(datingDataMat)
