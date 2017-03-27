@@ -38,7 +38,7 @@ void RadixSort(int array[],int size)
 		}
 
 		/*将基数桶中的元素重新串接起来*/
-		int k=0;
+		int k=0, i = 0;
 		for(i=0;i<10;i++)
 		{
 			if(order[i]!=0)

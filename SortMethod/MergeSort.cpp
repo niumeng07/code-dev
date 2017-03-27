@@ -6,7 +6,8 @@ void merge(int array[],int tempArray[],int left,int right,int middle)
 {
 	int index1=left;
 	int index2=middle+1;
-	for(int i=left;(index1<=middle)&&(index2<=right);i++)
+    int i = 0;
+	for( i=left;(index1<=middle)&&(index2<=right);i++)
 	{
 		if(array[index1]<array[index2])
 			tempArray[i]=array[index1++];
