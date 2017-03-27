@@ -1,7 +1,4 @@
 #include <iostream>
-#include "MaxHeap.h"
-using namespace std;
-#include <iostream>
 using namespace std;
 
 /*最大堆定义*/
@@ -20,10 +17,6 @@ public:
 	int rightChild(int index);  //返回右孩子的位置
 };
 /*最大堆排序函数*/
-
-#include <iostream>
-#include "MaxHeap.h"
-using namespace std;
 
 /*最大堆成员函数实现*/
 MaxHeap::MaxHeap(int array[],int n)

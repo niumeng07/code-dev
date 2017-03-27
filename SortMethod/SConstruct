@@ -1,4 +1,6 @@
 import os
 env = Environment(CC="g++", CCFLAGS="-std=c++11")
 
-env.Program("prog", "main.cpp")
+env.Program("main", "main.cpp")
+env.Program("ShellSort", "ShellSort.cpp")
+env.Program("HeapSort", "HeapSort.cpp")
