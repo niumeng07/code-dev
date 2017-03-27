@@ -18,3 +18,14 @@ Some examples:
     isMatch("aab", "c*a*b") → true
 
 动态规划求解
+1. p的未尾为*,且s[i-1] != p[j-2]    return f(i,j) = f(i,j-2) 
+2. p的未尾为*,且s[i-1] == p[j-2]    return f(i,j) = f(i,j-2) || f(i-1, j-2) || f(i-1,j)
+3. p的未尾为.                       return f(i,j) = f(i-1, j-1)
+4. p的未尾为字符且p[j-1] = s[i-1]   return f(i,j) = f(i-1, j-1)
+5. p的未尾为字符且p[j-1] != s[i-1]  return false
+举例说明
+1. abc, abcd*   左c与右d不相等，则认为d*为空，判断abc与abc
+   abc, abb*    左c与右b不相册，同判断abc与ab
+2. abc, abc*    左c与右c相等,  abc与ab,  ab与ab, ab与abc*，只需要一个为真即可
+
+
