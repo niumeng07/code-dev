@@ -9,7 +9,7 @@ class MaxHeap
 {
 private:
 	int size; //最大堆的元素数目
-int * array;  //最大堆数组的首地址指针
+    int * array;  //最大堆数组的首地址指针
 public:
 	MaxHeap(int array[],int n); //用已有数组初始化一个最大堆 
          void buildHeap();   //构建最大堆
