@@ -1,0 +1,27 @@
+这个解法用long来保证把数字反转后不会溢出
+
+不过在实际面试中，如果面试官说，那我的输入也是long
+
+其实也好解，我只需要把这个数的最低位和最高位单独拿出来，剩下的反转，则一定不会溢出
+
+/*
+ * a. 如果输入是long int，只需要把一个数的最高位和最低位单独拿出来，剩下的一定不会溢出
+ * b. 只判断一半，一定不会溢出
+ * */
+class Solution
+{
+public:
+    bool isPalindrome(int x)
+    {
+        if ( x < 0 || (x >0 && x % 10 ==0)) return false;
+        int x_ori =x;
+        long result = 0;
+        while(x > result)
+        {
+            result = result * 10 + x % 10;
+            x = x/10;
+        }
+        if (x == result || x == result/10) return true;
+        return false;
+    }
+};
