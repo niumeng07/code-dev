@@ -56,4 +56,50 @@ public:
         }
         return s.substr(max_left, max_len);
     } 
+    std::string longestPalindrome3(string s)
+    {
+        if(s.size() < 2 ) return s;
+        int max_len = 1;
+        int left, right, max_l, max_r;
+        for ( int i = 0; i< s.size(); i++)
+        {
+            left = i, right = i;
+            for(int k = 1; i - k >=0 && i + k < s.size() ; k++)
+            {
+                if( char(s[i-k]) != char(s[i+k]) ) break;
+                left = i - k;
+                right = i + k;
+                if(right - left + 1 > max_len)
+                {
+                    max_len = right - left + 1;
+                    max_l = left;
+                    max_r = right;
+                }
+            }
+
+            if(i + 1 < s.size() ) 
+            {
+                if( char(s[i]) != char(s[i+1])) continue;
+                left = i; right = i+1;
+                if(right - left + 1 > max_len)
+                {
+                    max_len = right - left + 1;
+                    max_l = left;
+                    max_r = right;
+                }
+                for ( int k = 1; i - k >=0 && i + k + 1 < s.size(); k++)
+                {
+                    left = i - k; right = i+1+k;
+                    if(char(s[i-k]) != char(s[i+1+k])) break;
+                    if(right - left + 1 > max_len)
+                    {
+                        max_len = right - left + 1;
+                        max_l = left;
+                        max_r = right;
+                    }
+                }
+            }
+        }
+        return s.substr(max_l, max_len);
+    }
 };
