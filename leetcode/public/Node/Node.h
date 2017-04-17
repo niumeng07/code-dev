@@ -8,12 +8,17 @@ class Node
 {
 public:
     Node(){}
+    Node(T data){}
     ~Node(){}
 
-    map<int, Node*> childs; //孩子节点队列
+    int addChild(Node* child);
+
+    map<int, Node*> *childs; //孩子节点队列
     int child_num;          //孩子节点数量
     Node* father;           //父节点
-    T curr;            //当前节点内容
+    T data;            //当前节点内容
+    bool isRoot;
+    bool isLeaf;
 };
 #endif
 
