@@ -4,7 +4,7 @@ env.Append(tools=['default', 'packaging'])
 
 CppPath=[
   '#.',
-  "../public/Node/"
+  "../../public/Node/"
   ]
 env.Append(CPPPATH = CppPath)
 
@@ -14,7 +14,7 @@ env.Append(LIBPATH = LibPath)
 Export("env")
 #Conscript('util/SConscript')
 
-all_path = [".", "../public/Node"]
+all_path = [".", "../../public/Node"]
 def FindSource():
   objs = []
   for path in all_path:
