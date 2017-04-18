@@ -31,3 +31,7 @@ beginWord为Node-C[0]
 从wordlist中找与Node-C[k]差异为1的词做为Node-C[k]的子Node, 并计为Node-C[k+1]
     若Node-C[k+1]层中有endWord, 则返回所有从beginWord到endWord的路径, 结束
     若Node-C[k+1]层中无endWord, 则继续循环
+
+最后的说明
+两个版本
+1. 

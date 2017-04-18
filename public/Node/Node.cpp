@@ -28,11 +28,12 @@ Node::~Node()
 }
 bool Node::_addChild(Node* child)
 {
-    this->childs.insert(std::make_pair(childNum, child));
+    this->childs.insert(std::make_pair(childNum, child)); //这里报了
     this->childNum++;
     this->isLeaf = false;
     child->father = this;
     child->_updateNode();
+    return true;
 }
 void Node::_updateNode()
 {

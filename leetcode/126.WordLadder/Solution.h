@@ -6,8 +6,13 @@ using namespace std;
 class Solution 
 {
 public:
+  Solution()
+  {
+      this->minEndNodeDepth = -1;
+  }
   vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) 
   {
+    this->minEndNodeDepth = wordList.size();
     vector<vector<string>> result;
     if(beginWord == endWord)
     {
@@ -18,38 +23,68 @@ public:
     Node* root = new Node(beginWord);
     vector<Node*> endNode;
     this->BuildTree(root, endNode, endWord, wordList);
-    cout << "printAll()" << endl;
     root->_printAll();
+    for(int i = 0; i<endNode.size(); i++)
+    {
+        vector<string> v_tmp;
+        Node* t_it = endNode[i];
+        v_tmp.insert( v_tmp.begin(), t_it->_data() );
+        while(t_it->_father() != NULL)
+        {
+            t_it = t_it->_father();
+            v_tmp.insert( v_tmp.begin(), t_it->_data() );
+        }
+        result.push_back(v_tmp);
+    }
+    for(vector<vector<string>>::iterator iter = result.begin(); iter!=result.end(); )
+    {
+        if(iter->size() - 1 == this->minEndNodeDepth )
+            iter++;
+        else
+            result.erase(iter);
+    }
+
+    return result;
   }
   void BuildTree(Node* node, vector<Node*>& endNode, string endWord, vector<string>& wordList)
   {
     for(vector<string>::iterator iter = wordList.begin(); iter != wordList.end(); iter++)
     {
-      //cout << this->Diff(endWord, *iter) << endl;
       Node* t = new Node(*iter); 
-      // 当前Node的data, 即*iter
-      //   与father, 即node差异不为1, continue
       if( this->Diff(*iter, node->_data()) != 1)
-      { 
         continue;
-      }
-      //   与father差异为1, 与endWord相同,push到Tree中并加到endNode
       else if ( *iter == endWord)
       {
+        Node* t_it = node;
+        while(t_it->_father() != NULL)
+        {
+            if ( t_it->_father()->_data() == *iter )
+            {
+                return;
+            }
+            t_it = t_it->_father();
+        }
         node->_addChild(t);
-        //endNode.push_back(t);
+        if(t->_depth() <= this->minEndNodeDepth)
+        {
+            this->minEndNodeDepth = t->_depth();
+            endNode.push_back(t);
+        }
+        continue;
       }
-      //   与father差异为1, 与endWord不同,push到Tree中
       else
       {
-        //node->_addChild(t);
+        node->_addChild(t);
+      }
+      if(t->_depth() > wordList.size())
+      {
+          return;
       }
     }
     for(int i  = 0; i< node->_childNum(); i++)
     {
       this->BuildTree(node->_getChildNode(i), endNode, endWord, wordList);
     }
-    // 从endNode中反向
   }
   int Diff(string s1, string s2)
   {
@@ -63,5 +98,5 @@ public:
     return diff;
   }
 
-  bool find = false;
+  int minEndNodeDepth;
 };
