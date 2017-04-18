@@ -2,12 +2,16 @@
 
 int main()
 {
-    Node node(string("abc"));
-    node._addChild(new Node("def"));
-    Node node2(string("child1"));
-    node2._addChild(new Node("child12"));
+    Node node(string("Root"));
+    node._addChild(new Node("C1"));
+    Node node2(string("C2"));
+    node2._addChild(new Node("C3-2"));
     node._addChild(&node2);
 
-    node.printAll();
+    Node node3(string("C3"));
+    node._addChild(&node3);
+    Node node4(string("C3-1"));
+    node._getChildNode(2)->_addChild(&node4);
+    node._printAll();
     return 0;
 }

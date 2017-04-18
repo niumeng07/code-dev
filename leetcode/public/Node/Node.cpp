@@ -1,6 +1,7 @@
 #include "Node.h"
 #include <stdlib.h>
 #include <iostream>
+using namespace std;
 
 Node::Node()
 {
@@ -30,10 +31,34 @@ bool Node::_addChild(Node* child)
     this->childs.insert(std::make_pair(childNum, child));
     this->childNum++;
     this->isLeaf = false;
-    child->depth = this->depth + 1;
-    child->isLeaf = true;
     child->father = this;
+    child->_updateNode();
 }
+void Node::_updateNode()
+{
+  if(this->father == NULL)
+    this->depth = 0;
+  else
+    this->depth = this->father->depth + 1;
+
+  if(this->childNum == 0 )
+    this->isLeaf = true;
+  else
+  {
+    this->isLeaf = false;
+    for(int i = 0; i < this->childNum; i++)
+    {
+      this->childs[i]->_updateNode();
+    }
+  }
+}
+Node* Node::_getChildNode(int i)
+{
+  if( i > this->childNum)
+    return NULL;
+  return this->childs[i];
+}
+
 int Node::_depth()
 {
     return this->depth;
@@ -54,18 +79,20 @@ Node* Node::_father()
 {
     return this->father;
 }
-void Node::printAll()
+void Node::_printAll()
 {
-    cout << this->data << endl;
+    cout << "data: " << this->data 
+         << "  depth: " << this->depth 
+         << "  isLeaf: " << this->isLeaf
+         << "  childNum: " << this->childNum
+         << "  father: " << ((this->father == NULL)? "NULL":this->father->data)
+         << endl;
     if(this->childNum > 0)
     {
         for ( int i = 0; i< this->childNum; i++)
         {
-            this->childs[i]->printAll();
+            this->childs[i]->_printAll();
         }
     }
 }
-
-
-
 
