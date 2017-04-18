@@ -19,6 +19,7 @@ public:
     void _printAll();// 从当前节点开始打印所子节点
     void _updateNode();
     Node* _getChildNode(int i);//获取当前Node的第i个子Node
+    Node* _getFather();
 
 private:
     int depth; //标志当前节点深度, root节点为0，第一代子节点为1, ...

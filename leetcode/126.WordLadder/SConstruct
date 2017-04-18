@@ -1,3 +1,29 @@
-import os
+import os, sys, string                                                  
 env = Environment(CC="g++", CCFLAGS="-std=c++11")
-env.Program("prog", "main.cpp")
+env.Append(tools=['default', 'packaging'])
+
+CppPath=[
+  '#.',
+  "../public/Node/"
+  ]
+env.Append(CPPPATH = CppPath)
+
+LibPath=[]
+env.Append(LIBPATH = LibPath)
+
+Export("env")
+#Conscript('util/SConscript')
+
+all_path = [".", "../public/Node"]
+def FindSource():
+  objs = []
+  for path in all_path:
+    for file in os.listdir(path):
+      if file[-3:] != ".cc" and file[-4:] != ".cpp":
+        continue
+      file = '%s/%s' % (path, file)
+      objs.append(file)
+  print objs
+  return objs
+
+env.Program(target = "WordLadder", source = FindSource())

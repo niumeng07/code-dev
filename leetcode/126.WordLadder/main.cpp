@@ -3,7 +3,14 @@
 using namespace std;
 int main()
 {
-    Solution su;
-    return 0;
+  //["hot","dot","dog","lot","log","cog"]
+  //hit
+  //cog
+  vector<string> vec({"hot","dot","dog","lot","log","cog"});
+  string beginWord = "hit";
+  string endWord = "cog";
+  Solution su;
+  su.findLadders(beginWord, endWord, vec);
+  return 0;
 }
 

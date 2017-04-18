@@ -59,6 +59,12 @@ Node* Node::_getChildNode(int i)
   return this->childs[i];
 }
 
+Node* Node::_getFather()
+{
+  if(this->father == NULL)
+    return NULL;
+  return this->father;
+}
 int Node::_depth()
 {
     return this->depth;
