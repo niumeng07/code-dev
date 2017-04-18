@@ -25,21 +25,31 @@ public:
   {
     for(vector<string>::iterator iter = wordList.begin(); iter != wordList.end(); iter++)
     {
-      //添加diff ==1逻辑
+      //cout << this->Diff(endWord, *iter) << endl;
       Node* t = new Node(*iter); 
-      node->_addChild(t);
-      if(endWord == *iter)
+      // 当前Node的data, 即*iter
+      //   与father, 即node差异不为1, continue
+      if( this->Diff(*iter, node->_data()) != 1)
+      { 
+        continue;
+      }
+      //   与father差异为1, 与endWord相同,push到Tree中并加到endNode
+      else if ( *iter == endWord)
       {
-        cout << endWord << "  " << *iter << endl;
-        this->find = true;
-        endNode.push_back(t);
-        return;
+        node->_addChild(t);
+        //endNode.push_back(t);
+      }
+      //   与father差异为1, 与endWord不同,push到Tree中
+      else
+      {
+        //node->_addChild(t);
       }
     }
     for(int i  = 0; i< node->_childNum(); i++)
     {
       this->BuildTree(node->_getChildNode(i), endNode, endWord, wordList);
     }
+    // 从endNode中反向
   }
   int Diff(string s1, string s2)
   {

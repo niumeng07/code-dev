@@ -2,10 +2,7 @@ import os, sys, string
 env = Environment(CC="g++", CCFLAGS="-std=c++11")
 env.Append(tools=['default', 'packaging'])
 
-CppPath=[
-  '#.',
-  "../../public/Node/"
-  ]
+CppPath=[ '#.', "../../public/Node/"]
 env.Append(CPPPATH = CppPath)
 
 LibPath=[]

@@ -85,6 +85,10 @@ Node* Node::_father()
 {
     return this->father;
 }
+string Node::_data()
+{
+  return this->data;
+}
 void Node::_printAll()
 {
     cout << "data: " << this->data 
