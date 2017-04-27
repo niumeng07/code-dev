@@ -9,11 +9,11 @@ class Solution(object):
         try:
             v_set = set([])
             iter = head
-            v_set.update([str(iter)])
+            v_set.update([iter])
             while iter.next != None:
                 iter = iter.next
-                if str(iter) not in v_set:
-                    v_set.update([str(iter)])
+                if iter not in v_set:
+                    v_set.update([iter])
                 else:
                     return True
             return False
