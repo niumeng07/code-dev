@@ -2,101 +2,74 @@
 #include <string>
 #include "Node.h"
 using namespace std;
-
-class Solution 
+class Solution
 {
 public:
-  Solution()
-  {
-      this->minEndNodeDepth = -1;
-  }
-  vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) 
-  {
-    this->minEndNodeDepth = wordList.size();
-    vector<vector<string>> result;
-    if(beginWord == endWord)
+    vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) 
     {
-      vector<string> tmp({beginWord});
-      result.push_back(tmp);
-      return result;
-    }
-    Node* root = new Node(beginWord);
-    vector<Node*> endNode;
-    this->BuildTree(root, endNode, endWord, wordList);
-    root->_printAll();
-    for(int i = 0; i<endNode.size(); i++)
-    {
-        vector<string> v_tmp;
-        Node* t_it = endNode[i];
-        v_tmp.insert( v_tmp.begin(), t_it->_data() );
-        while(t_it->_father() != NULL)
+        vector<vector<string>> result;
+        if(beginWord == endWord)
         {
-            t_it = t_it->_father();
-            v_tmp.insert( v_tmp.begin(), t_it->_data() );
+            vector<string> tmp({beginWord});
+            result.push_back(tmp);
+            return result;
         }
-        result.push_back(v_tmp);
-    }
-    for(vector<vector<string>>::iterator iter = result.begin(); iter!=result.end(); )
-    {
-        if(iter->size() - 1 == this->minEndNodeDepth )
-            iter++;
-        else
-            result.erase(iter);
-    }
+        Node* root = new Node(beginWord);
+        vector<Node*> leafNode;
+        leafNode.push_back(root);
+        this->BuildTree(root, leafNode, endWord, wordList);
+        //root->_printAll();
 
-    return result;
-  }
-  void BuildTree(Node* node, vector<Node*>& endNode, string endWord, vector<string>& wordList)
-  {
-    for(vector<string>::iterator iter = wordList.begin(); iter != wordList.end(); iter++)
-    {
-      Node* t = new Node(*iter); 
-      if( this->Diff(*iter, node->_data()) != 1)
-        continue;
-      else if ( *iter == endWord)
-      {
-        Node* t_it = node;
-        while(t_it->_father() != NULL)
+        for(int i = 0; i < leafNode.size(); i++)
         {
-            if ( t_it->_father()->_data() == *iter )
+            if( leafNode[i]->_data() == endWord)
             {
-                return;
+                vector<string> unit;
+                Node* tmp = leafNode[i];
+                while(tmp != NULL)
+                {
+                    unit.insert(unit.begin(), tmp->_data());
+                    tmp = tmp->_father();
+                }
+                result.push_back(unit);
             }
-            t_it = t_it->_father();
         }
-        node->_addChild(t);
-        if(t->_depth() <= this->minEndNodeDepth)
+        return result;
+    }
+    void BuildTree(Node* node, vector<Node*>& leafNode, string endWord, vector<string>& wordList)
+    {
+        int leafOldSize = leafNode.size();
+        bool found = false;
+        for ( int i = 0; i< leafOldSize; i++)
         {
-            this->minEndNodeDepth = t->_depth();
-            endNode.push_back(t);
-        }
-        continue;
-      }
-      else
-      {
-        node->_addChild(t);
-      }
-      if(t->_depth() > wordList.size())
-      {
-          return;
-      }
-    }
-    for(int i  = 0; i< node->_childNum(); i++)
-    {
-      this->BuildTree(node->_getChildNode(i), endNode, endWord, wordList);
-    }
-  }
-  int Diff(string s1, string s2)
-  {
-    if(s1.size() != s2.size()) return - 1;
-    int diff = 0;
-    for(int i = 0; i < s1.size(); i++)
-    {
-      if(s1[i] != s2[i])
-        diff++;
-    }
-    return diff;
-  }
+            for( auto word : wordList)
+            {
+                if(this->Diff(word, (leafNode[i])->_data()) == 1 )
+                {
+                    if(word == endWord) found = true;
 
-  int minEndNodeDepth;
+                    Node *t = new Node(word);
+                    (leafNode[i])->_addChild(t);
+                    leafNode.push_back(t);
+                }
+            }
+        }
+        if(found) return;
+        for(int i = 0; i<leafOldSize; i++)
+            leafNode.erase(leafNode.begin());
+
+        this->BuildTree(node, leafNode, endWord, wordList);
+    }
+    int Diff(string s1, string s2)
+    {
+        if(s1.size() != s2.size()) return - 1;
+        int diff = 0;
+        for(int i = 0; i < s1.size(); i++)
+        {
+            if(s1[i] != s2[i])
+                diff++;
+        }
+        return diff;
+    }
+
 };
