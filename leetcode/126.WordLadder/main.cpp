@@ -1,6 +1,6 @@
 #include <iostream>
-//#include "Solution.h"
-#include "Solution2.h"
+#include "Solution.h"
+//#include "Solution2.h"
 using namespace std;
 int main()
 {
@@ -15,5 +15,11 @@ int main()
   Solution su;
   vector<vector<string>> result = su.findLadders(beginWord, endWord, vec);
   vector<vector<string>> result2 = su.findLadders(beginWord2, endWord2, vec2);
+  for(auto xx : result2)
+  {
+      for( auto x : xx)
+          cout << x << "\t" << ends;
+      cout << endl;
+  }
   return 0;
 }
