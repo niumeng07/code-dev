@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Solution.h"
-//#include "Solution2.h"
+//#include "Solution.h"
+#include "Solution2.h"
 using namespace std;
 int main()
 {
