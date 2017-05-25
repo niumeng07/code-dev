@@ -52,17 +52,25 @@ public:
         {
             for( int i = this->max_i; i < this->nums.size(); ++i)
             {
-                if(!(this->sumTmp >= this->target && nums[i] > 0))
+                int _need = this->N - tmp.size();// 还需要几个数
+                int _tmp = this->sumTmp;
+                for(int j = 0; j < _need && i + j < nums.size(); j++)
+                    _tmp += nums[i + j];
+                if(this->sumTmp >= this->target && nums[i] > 0)
+                    break;
+                if( _tmp > this->target)
+                    break;
+                else
                 {
                     this->max_i = i + 1;
                     tmp.push_back(nums[i]); // 导致超时
                     this->sumTmp += nums[i];// 导致超时
                     this->findSum(tmp);
+                    this->sumTmp -= tmp.back();
+                    tmp.pop_back();
                 }
             }
         }
-        this->sumTmp -= tmp.back();
-        tmp.pop_back();
     }
 
 public:
