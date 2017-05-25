@@ -8,13 +8,6 @@ public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         return this->findNSum(nums, target, 4);
     }
-    int sumVector(vector<int>& nums)
-    {
-        int sum = 0;
-        for(int i = 0; i<nums.size(); i++)
-            sum += nums[i];
-        return sum;
-    }
 
     bool clearElements()
     {
@@ -25,26 +18,35 @@ public:
         this->time.erase(this->time.begin(), this->time.end());
         this->time = vector<int>(10,0);
         this->max_i = 0;
+        this->sumTmp = 0;
         return true;
     }
     vector<vector<int> > findNSum(vector<int> &nums, int target, int N)
     {
+        clock_t start, end;
+        start = clock();
         clearElements();
+        end = clock();
+        cout << "time clearElement: " << end - start << endl;
+        start = clock();
         sort(nums.begin(), nums.end());// 从小到大进行排序
+        end = clock();
+        cout << "time sort nums: " << end - start << endl;
         if( nums.size() < N )
             return result;
 
+        start = clock();
         vector<int> tmp;
-        vector<int> pos;
         this->nums = nums;
         this->target = target;
         this->N = N;
-
-        clock_t start, end;
-        start = clock();
-        findSum(tmp, pos);
         end = clock();
-        this->time[0] = end - start;
+        cout << "time init class Element: " << end - start << endl;
+
+        start = clock();
+        findSum(tmp);
+        end = clock();
+        cout << "time findSum: " << end - start << endl;
         start = clock();
         for( int i = 0; i< this->result.size(); i++)
         {
@@ -53,28 +55,43 @@ public:
         sort(this->result.begin(), this->result.end());
         this->result.erase(unique(this->result.begin(), this->result.end()), this->result.end());
         end = clock();
-        this->time[1] = end - start;
+        cout << "time sort result: " << end -start << endl;
+        for ( auto x : this->time)
+            cout << x << "  " << ends;
+        cout << endl;
         return this->result;
     }
-    void findSum(vector<int> &tmp, vector<int> &pos)
+    void findSum(vector<int> &tmp)
     {
         clock_t start, end;
-        if(tmp.size() == this->N && this->sumVector( tmp )== this->target)
+        if(tmp.size() == this->N && this->sumTmp== this->target)
         {
+            start = clock();
             this->result.push_back(tmp);
+            end = clock();
+            this->time[0] += (end -start);
         }
         else if(tmp.size() < this->N )
         {
             for( int i = this->max_i; i < this->nums.size(); i++)
             {
-                this->max_i = i + 1;
-                tmp.push_back(nums[i]);
-                pos.push_back(i);
-                this->findSum(tmp, pos);
+                if(!(this->sumTmp >= this->target && nums[i] > 0))
+                {
+                    this->max_i = i + 1;
+                    start = clock();
+                    tmp.push_back(nums[i]); // 导致超时
+                    end = clock();
+                    this->time[1] += (end -start);
+                    start = clock();
+                    this->sumTmp += nums[i];// 导致超时
+                    end = clock();
+                    this->time[2] += (end -start);
+                    this->findSum(tmp);
+                }
             }
         }
+        this->sumTmp -= tmp.back();
         tmp.pop_back();
-        pos.pop_back();
         end = clock();
     }
 
@@ -85,4 +102,5 @@ public:
     vector<vector<int> > result;
     vector<int> time;
     int max_i = 0;
+    int sumTmp = 0;
 };
