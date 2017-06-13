@@ -19,3 +19,11 @@ There exist two distinct solutions to the 4-queens puzzle:
   ".Q.."]
 ]
 Subscribe to see which companies asked this question.
+
+//
+Solution 1: 1, 3, 0, 2
+Sulution 2: 2, 0, 3, 1
+特征: 
+a. 不存在相等的数字 b. 若两行行号差为d, 则两行数字差不能为d
+//
+
