@@ -1,0 +1,3 @@
+import os
+env = Environment(CC='g++',CCFLAGS="-std=c++11")
+env.Program("prog", "main.cpp")
