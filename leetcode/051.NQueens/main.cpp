@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Solution2.h"
+#include "Solution.h"
 #include <time.h>
 using namespace std;
 int main()

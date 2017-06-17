@@ -46,9 +46,10 @@ public:
     }
     int sumVec( vector<int> &nums)
     {
-        int s = 0;
+        s = 0;
         for( auto x : nums)
             s += x;
         return s;
     }
+    int s;
 };

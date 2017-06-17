@@ -14,12 +14,9 @@ public:
     vector<vector<string>> solveNQueens(int n) {
         vector<vector<string> > res;
         vector<int> t(n, 0);
-        string s = "";
+        string s(n, '.');
         for(int i = 0; i<n; i++)
-        {
             t[i]=i;
-            s += ".";
-        }
         do {
             if( isValid(t) ){
                 vector<string> v;
