@@ -21,14 +21,17 @@ public:
     void Travel( TreeNode* root, vector<int>& curr, vector<string> &res)
     {
         string tmp = _t;
-        _t.append("->").append(to_string(root->val));
+        if(_t.size() > 0)
+            _t.append("->").append(to_string(root->val));
+        else
+            _t.append(to_string(root->val));
         if( root->left == NULL && root->right == NULL)
-            res.push_back(_t.substr(2, _t.size() -2));
+            res.push_back(_t);
         if( root->left != NULL )
             Travel(root->left, curr, res);
         if(root->right != NULL )
             Travel(root->right, curr, res);
-        _t = tmp;
+        _t = std::move(tmp);
     }
 
     string _t;
