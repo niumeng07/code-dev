@@ -78,6 +78,7 @@ public:
     int N;
     vector<int> nums;
     vector<vector<int> > result;
+    vector<int> last;
     vector<int> time;
     int max_i = 0;
     int sumTmp = 0;
