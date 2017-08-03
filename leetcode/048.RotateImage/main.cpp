@@ -7,10 +7,14 @@ using namespace std;
 int main(){
     Solution su;
     vector<vector<int> > matrix;
-    vector<int> tmp({1,2});
+    vector<int> tmp({1,2,3,4});
+    vector<int> tmp2({5,6,7,8});
+    vector<int> tmp3({9,10,11,12});
+    vector<int> tmp4({13,14,15,16});
     matrix.push_back(tmp);
-    vector<int> tmp2({3,4});
     matrix.push_back(tmp2);
+    matrix.push_back(tmp3);
+    matrix.push_back(tmp4);
     for(auto vec : matrix){
         for(auto x : vec){
             cout << x << " ";
