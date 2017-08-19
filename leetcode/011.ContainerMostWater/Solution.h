@@ -17,31 +17,22 @@ public:
         }
         return max;
     }
-    /* 有没有一层特征解决的方案 */
-    /* 414*/
-    int maxArea(vector<int>& height) {
-        int left = 0, right = height.size() - 1;
-        int m = 0;
-        int h = 0;
+	int maxArea(vector<int>& height) {
+        int left = 0, right = height.size() - 1, m = 0, h = 0;
         bool t = true;
-        while(left < right)
-        {
-            if( height[left] <= height[right])
-            {
+        while(left < right) {
+            if( height[left] <= height[right]) {
                 h = height[left];
                 t = true;
+                m = m > (right - left) * h ? m : (right - left) * h;
+                left++;
             }
-            else
-            {
+            else {
                 h = height[right];
                 t = false;
-            }
-            
-            m = std::max( m, (right - left) * h);
-            if( t )
-                left++;
-            else
+                m = m > (right - left) * h ? m : (right - left) * h;
                 right--;
+            }
         }
         return m;
     }

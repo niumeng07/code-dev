@@ -8,7 +8,7 @@ int main()
     vector<int> rinput({1,1});
     Solution su;
     clock_t start = clock();
-    cout << su.maxArea(rinput) << endl;
+    cout << su.maxArea(linput) << endl;
     clock_t end = clock();
     cout << "time used: " << end - start << endl;
     return 0;
