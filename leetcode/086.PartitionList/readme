@@ -1,0 +1,17 @@
+Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+
+所有比x小的node出现在大于或等于x的node之前
+1. 不可行，i,j两个坐标？ListNode无法获取j
+2. 从i=0开始，发现小于x的，放到尾部（额外一个指针保存原始尾部，用于循环结束条件）
+   遇到x
+   所有大于或等于x的结点放到头部之后的位置
+You should preserve the original relative order of the nodes in each of the two partitions.
+
+For example,
+Given 1->4->3->2->5->2 and x = 3,
+return 1->2->2->4->3->5.
+问题是：
+2 1 2 3 4 5是否是符合要求的答案
+1 2 2这三个数的顺序是怎么决定的？原始位置顺序还是大于排序的？
+从4 3 5三个数来看，应该是原始顺序
+如果是这样的话，只需要遍历一次，找到所有小于x的Node往head位置放即可？（第一个为head，第二个为head的下一个，依次下一个)
