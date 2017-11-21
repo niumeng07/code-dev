@@ -10,12 +10,16 @@ struct ListNode {
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
-        ListNode* end = head;
-        while(end->next != NULL)
-            end = end->next;
-        for(ListNode* iter = head; iter!=end; iter=iter->next)
-        {
+        ListNode left(0), right(0);
+        ListNode *l = &left, *r = &right;
+        while(head){
+            ListNode* & ref = head->val < x ? l : r;
+            ref->next = head;
+            ref = ref->next;
+            head = head->next;
         }
-        return head;
+        l->next = right.next;
+        r->next = NULL;
+        return left.next;
     }
 };

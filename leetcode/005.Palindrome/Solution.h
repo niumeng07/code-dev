@@ -33,6 +33,11 @@ public:
         cout << s << "    " << s.substr(start, end-start+1) << endl;
         return s.substr(start, end-start+1);
     }
+    /*
+     * 该方法思路：
+     *   以任意一个字符为中心向两边扩展，求最大循环长度
+     *   若连续N个字符相同，则这个N个字符被视为一个整体向两边扩展
+     * */
 	std::string longestPalindrome2(string s) 
     {
         if (s.size() < 2)

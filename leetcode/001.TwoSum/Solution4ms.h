@@ -1,3 +1,6 @@
+#include <vector>
+#include <unordered_map>
+using namespace std;
 class Solution4ms {
 public:
 	vector<int> twoSum(vector<int> &numbers, int target)

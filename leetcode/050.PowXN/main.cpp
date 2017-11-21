@@ -1,6 +1,7 @@
 #include "Solution.h"
 #include <iostream>
 #include <time.h>
+#include <stdint.h>
 using namespace std;
 int main()
 {

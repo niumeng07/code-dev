@@ -15,6 +15,8 @@ For example,
 循环或递归比较好理解和解决，但耗时较大。
 
 动态规划 (DP) 算法呢？
+abc abf aabbef
+t[0][0]=true t[0][1]=t[0][0]&&
 
 搜索算法 (深度优先DFS? 宽度优先BFS?)
 
