@@ -8,7 +8,7 @@ int main()
     Solution su;
 	clock_t start, end;
 	start = clock();
-    vector<vector<string> > res = su.solveNQueens(8);
+    vector<vector<string> > res = su.solveNQueens(6);
 	end = clock();
     for(auto vec : res)
     {
