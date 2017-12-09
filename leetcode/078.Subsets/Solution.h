@@ -20,7 +20,7 @@ public:
         vector<int> tmp;
         results.push_back(tmp);
         dfs(nums, results, tmp, 0);
-        results.erase( unique(results.begin(), results.end() ), results.end() );
+        //results.erase( unique(results.begin(), results.end() ), results.end() );
         return results;
     }
 };
