@@ -14,6 +14,11 @@ class Solution
 public:
     Node* BuildTree(string begin, string end, vector<string>& wordList)
     {
+        if(begin == end)
+        {
+            //
+        }
+
     }
     vector<vector<string> > findLadders(string beginWord, string endWord, vector<string>& wordList) 
     {

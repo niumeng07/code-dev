@@ -14,13 +14,16 @@ int diff(string a, string b)
     }
     return diff;
 }
-void ledder(string begin, string end, vector<string> dict, vector<vector<string > > &result)
+void ledder(string begin, string end, vector<string> dict, vector<vector<string > > &result, vector<string> &tmp )
 {
+
 }
 vector<vector<string> > ledder(string begin, string end, vector<string> dict)
 {
     vector<vector<string> > result;
-    ledder(begin, end, dict, result);
+    vector<string> tmp;
+    tmp.push_back(begin);
+    ledder(begin, end, dict, result, tmp);
     return result;
 }
 int main()

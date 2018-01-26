@@ -11,7 +11,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 # 数据准备
 import input_data
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets("/Users/liuda/Local/data/mnist/", one_hot=True)
 
 # 超参数设置
 learning_rate = 0.001
