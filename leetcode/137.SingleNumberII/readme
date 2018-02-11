@@ -1,0 +1,10 @@
+Given an array of integers, every element appears three times except for one, which appears exactly once. Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+
+思路
+1. 把所以的数转化为二进制数（并不是真的保存结果），假设位数最长为N（如果是32位int型，则可以直接定为长度32），则申请一个vector<int> n(N,0);
+   对每一个数，从（二进制的第0位到第x位x<N），如果第i位为1，则n(i)+=1
+2. 对n进行遍历，如果n(i)不能被3整除，则第i位为1的二进数出现次数不为3
