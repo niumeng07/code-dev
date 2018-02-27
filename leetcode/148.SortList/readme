@@ -5,3 +5,5 @@ Sort a linked list in O(n log n) time using constant space complexity.
 问题：只有next指针，没有last指针，要添加？--这样的话需要修改ListNode结构体--不添加
 把所有地址映射到一个vector, 对vector进行quick_sort
 
+如果不能用额外空间呢？
+如果不能用额外空间，
