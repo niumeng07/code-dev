@@ -1,0 +1,25 @@
+Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+
+For example:
+Given binary tree [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its level order traversal as:
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+
+逐层遍历树
+如上示例树共三层，
+按第一层[3]，第二层[9,20],第三层[15,7]遍历
+
+通过，思路
+类变量vector<vector<int> > result;
+类遍历depth,初始为0,对树进行遍历,depth记录当前节点的深度,并把当前节点值放入result[depth].push_back(Node->value);
+需要判断：如果第一次遍历某个深度的节点，此时result[depth]不存在，需要新建
+
