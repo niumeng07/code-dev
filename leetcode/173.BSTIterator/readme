@@ -1,0 +1,22 @@
+Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+
+Calling next() will return the next smallest number in the BST.
+
+Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+
+Credits:
+Special thanks to @ts for adding this problem and creating all test cases.
+
+Seen this question in a real interview before?  
+
+思路
+Solution1: (空间复杂度不复合要求)
+    BSTree的中序遍历是有序的，中序遍历并放到一个vector中，next时从vector输出
+    这样做能解决问题，但不能做到 O(h) Memory 的，其中 h 是树的高度。
+Solution2: (各方向均满足要求)
+    从root开始，一路把root, root->left, root->left->left, root->left->left->left...放到vector中，直到current->left为NULL
+    则最后一个进入的一定是最小值
+    从最后进入的一个开始弹出
+    若当前弹出的节点有右子树，则在弹出当前节点后，放入当前被弹出这个节点的右子树(该右子树大于被弹出的节点，但被小于弹出节点的上级，因为整体是上级的左子树)
+    这种方法能保证当前vector的size不大于树的高度
+
