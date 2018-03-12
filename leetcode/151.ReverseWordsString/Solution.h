@@ -26,6 +26,7 @@ public:
     void reverseWords2(string &s) {
         int ll = 0, lr = 0;
         int rl = s.size() - 1, rr = s.size() - 1;
+        int size = s.size();
         while (true) {
             if ( rl < lr )
                 break;
@@ -37,13 +38,11 @@ public:
                 rl--;
                 continue;
             }
-            //the sky is blue
-            //   .      .
-            s = s.substr(rl + 1, rr - rl) + " " + s.substr(lr + 1, rl - 1 - lr) + " " + s.substr(ll, lr - ll + 1);
-            cout << s << endl;
-            ll = lr + 1 + (rr - rl - (lr - ll + 1));
-            rr = rl - 1 - ( rl - rr + (lr - ll + 1));
+            s = s.substr(0, ll) + s.substr(rl + 1, rr - rl) + " " + s.substr(lr + 1, rl - 1 - lr) + " " + s.substr(ll, lr - ll + 1) + s.substr(rr + 1, size - rl + 1);
+            int tmp = lr + 1;
+            ll = rr - rl;
             lr = ll + 1;
+            rr = size - tmp + 1;
             rl = rr - 1;
         }
     }
