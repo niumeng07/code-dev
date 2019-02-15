@@ -8,12 +8,12 @@ using namespace std;
 class Solution {
 public:
     set<set<int> > store;
+    set<int> temp;
     int findPairs(vector<int>& nums, int k) {
         if (k < 0) {
             return 0;
         }
         store.clear();
-        set<int> temp;
         for (int i = 0; i < nums.size(); i++) {
             for (int j = i + 1; j < nums.size(); j++) {
                 temp.clear();
