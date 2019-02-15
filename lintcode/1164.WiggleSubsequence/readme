@@ -1,0 +1,33 @@
+class Solution {
+public:
+    /**
+     * @param nums: the given sequence
+     * @return: the length of the longest subsequence that is a wiggle sequence
+     */
+    int wiggleMaxLength(vector<int> &nums) {
+        // Write your code here
+        if(nums.size() == 1) return 1;
+        if(nums.size() == 2 && nums[0] != nums[1]) return 2;
+        if(nums.size() == 2 && nums[0] == nums[1]) return 1;
+        
+        // length > 3
+        int length = 1;
+        vector<int> all_length;
+        int k = 0;
+        int tmp = nums[1] - nums[0];
+        for(int i = 2; i < nums.size(); i++) {
+            if((nums[i] - nums[i-1]) * tmp < 0) {
+                length++;
+                tmp = nums[i] - nums[i-1];
+            } else {
+                all_length.push_back(length);
+                length = 0;
+            }
+        }
+        int max = 1;
+        for (int i = 0; i < all_length.size(); i++) {
+            if(all_length[i] > max) max = all_length[i];
+        }
+        return max;
+    }
+};
