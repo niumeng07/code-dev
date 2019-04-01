@@ -20,18 +20,18 @@ double variance(vector<double> &vec, int start, int end) { // O(N)
   return var;
 }
 double function1() {
-  double min_var_sum = 999999999.99;
-  int minK = 0;
+  double min_variace_sum = 999999999.99;
+  int min_variace_index = 0;
   for (int K = 0; K < input.size(); K++) { // O(N) * O(2N)=O(N^2)
     double variance_left = K > 0 ? variance(input, 0, K - 1) : 0.0;
     double variance_right = variance(input, K, input.size() - 1); // O(N)
-    if ((variance_left + variance_right) < min_var_sum) {
-      minK = K;
-      min_var_sum = variance_left + variance_right;
+    if ((variance_left + variance_right) < min_variace_sum) {
+      min_variace_index = K;
+      min_variace_sum = variance_left + variance_right;
     }
   }
-  // cout << "minK = " << minK << ", minVar = " << min_var_sum << endl;
-  return min_var_sum;
+  // cout << "min_variace_index = " << min_variace_index << ", minVar = " << min_variace_sum << endl;
+  return min_variace_sum;
 }
 double function2() {
   double left_sum = 0.0;
@@ -39,8 +39,8 @@ double function2() {
   double left_square_sum = 0.0;
   double right_square_sum = 0.0;
   int N = input.size();
-  double minK = 0.0;
-  double min_var = 999999999.99;
+  double min_variace_index = 0.0;
+  double min_variace = 999999999.99;
 
   for (int K = 0; K < input.size(); K++) {
     right_sum += input[K];
@@ -62,13 +62,13 @@ double function2() {
              right_sum * right_sum / ((N - K) * (N - K)) -
              2.0 / ((N - K) * (N - K)) * right_sum * right_sum;
     }
-    if (var < min_var) {
-      min_var = var;
-      minK = K;
+    if (var < min_variace) {
+      min_variace = var;
+      min_variace_index = K;
     }
   }
-  // cout << "minK = " << minK << ", minVar = " << min_var << endl;
-  return min_var;
+  // cout << "min_variace_index = " << min_variace_index << ", minVar = " << min_variace << endl;
+  return min_variace;
 }
 int main(int argc, char *argv[]) {
   clock_t start, end;
