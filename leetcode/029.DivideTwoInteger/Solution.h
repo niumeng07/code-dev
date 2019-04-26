@@ -16,11 +16,9 @@ public:
     while (a >= b) {
       x = b;
       y = 1;
-      cout << x << "\t" << y << endl;
       while (a >= (x << 1)) {
         x <<= 1;
         y <<= 1;
-        cout << x << "\t" << y << endl;
       }
       a -= x;
       ans += y;
