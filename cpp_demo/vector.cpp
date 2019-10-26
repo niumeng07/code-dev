@@ -1,6 +1,7 @@
 #include <time.h>
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -21,5 +22,6 @@ int main(int argc, char *argv[]) {
   }
   end = clock();
   cout << end - start << endl;
+  unordered_map<int, int> umap;
   return 0;
 }
