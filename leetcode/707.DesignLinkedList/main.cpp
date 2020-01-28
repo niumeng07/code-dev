@@ -4,7 +4,7 @@ using namespace std;
 
 void test_get() {
   cout << "test_get-------------" << endl;
-  MyLinkedList* l = new MyLinkedList();
+  MyLinkedList *l = new MyLinkedList();
   //为空的时候get
   cout << l->get(0) << endl;
   cout << l->get(1) << endl;
@@ -17,7 +17,7 @@ void test_get() {
 }
 void test_addAtHead() {
   cout << "test_addAtHead-------------" << endl;
-  MyLinkedList* l = new MyLinkedList();
+  MyLinkedList *l = new MyLinkedList();
   l->addAtHead(1);
   l->addAtHead(2);
   l->PrintList();
@@ -26,7 +26,7 @@ void test_addAtHead() {
 
 void test_addAtTail() {
   cout << "test_addAtTail-------------" << endl;
-  MyLinkedList* l = new MyLinkedList();
+  MyLinkedList *l = new MyLinkedList();
   l->addAtTail(1);
   l->addAtTail(2);
   l->PrintList();
@@ -35,7 +35,7 @@ void test_addAtTail() {
 
 void test_addAtIndex() {
   cout << "test_addAtIndex-------------" << endl;
-  MyLinkedList* l = new MyLinkedList();
+  MyLinkedList *l = new MyLinkedList();
   l->addAtIndex(0, 1);
   l->addAtIndex(0, 2);
   l->addAtIndex(1, 3);
@@ -45,7 +45,7 @@ void test_addAtIndex() {
 
 void test_deleteAtIndex() {
   cout << "test_deleteAtIndex-------------" << endl;
-  MyLinkedList* l = new MyLinkedList();
+  MyLinkedList *l = new MyLinkedList();
   l->addAtIndex(0, 1);
   l->addAtIndex(0, 2);
   l->PrintList();

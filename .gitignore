@@ -1,1 +1,9 @@
 *.dblite
+*.ipynb
+*.idea
+.ccls-cache/
+.clangd/
+.vscode/
+.ccls
+.metals
+compile_commands.json

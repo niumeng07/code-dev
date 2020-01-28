@@ -20,6 +20,7 @@ class Solution(object):
         except:
             return False
 
+
 if __name__ == "__main__":
     first = ListNode("first")
     head = ListNode("head")
@@ -27,13 +28,13 @@ if __name__ == "__main__":
 
     su = Solution()
     if su.hasCycle(head):
-        print "has Cycle"
+        print("has Cycle")
     else:
-        print "no Cycle"
+        print("no Cycle")
 
     first.next = head
     if su.hasCycle(head):
-        print "has Cycle"
+        print("has Cycle")
     else:
-        print "no Cycle"
+        print("no Cycle")
 
