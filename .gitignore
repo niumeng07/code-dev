@@ -7,3 +7,4 @@
 .ccls
 .metals
 compile_commands.json
+build
