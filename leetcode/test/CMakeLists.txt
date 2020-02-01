@@ -1,0 +1,297 @@
+# 查找 GTest 库
+find_package(GTest REQUIRED)
+# GTest 的头文件
+include_directories(${GTEST_INCLUDE_DIRS} /usr/local/include/ ../include ../include/Node ../src/)
+link_directories(../lib /usr/local/lib)
+
+add_executable(ut_0001_two_sum ut_0001_two_sum.cpp)
+target_link_libraries(ut_0001_two_sum ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0001_two_sum)
+
+add_executable(ut_0237_del_node_in_list ut_0237_del_node_in_list.cpp)
+target_link_libraries(ut_0237_del_node_in_list ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0237_del_node_in_list)
+
+add_executable(ut_0037_sudoku_solver ut_0037_sudoku_solver.cpp)
+target_link_libraries(ut_0037_sudoku_solver ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0037_sudoku_solver)
+
+add_executable(ut_0539_min_time_diff ut_0539_min_time_diff.cpp)
+target_link_libraries(ut_0539_min_time_diff ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0539_min_time_diff)
+
+add_executable(ut_0279_perfect_squares ut_0279_perfect_squares.cpp)
+target_link_libraries(ut_0279_perfect_squares ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0279_perfect_squares)
+
+add_executable(ut_0036_valid_soduku ut_0036_valid_soduku.cpp)
+target_link_libraries(ut_0036_valid_soduku ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0036_valid_soduku)
+
+add_executable(ut_0226_invert_binary_tree ut_0226_invert_binary_tree.cpp)
+target_link_libraries(ut_0226_invert_binary_tree ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0226_invert_binary_tree)
+
+add_executable(ut_0129_sum_root2_leaf_num ut_0129_sum_root2_leaf_num.cpp)
+target_link_libraries(ut_0129_sum_root2_leaf_num ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0129_sum_root2_leaf_num)
+
+add_executable(ut_0201_bitwise_a_n_d_num_range ut_0201_bitwise_a_n_d_num_range.cpp)
+target_link_libraries(ut_0201_bitwise_a_n_d_num_range ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0201_bitwise_a_n_d_num_range)
+
+add_executable(ut_0179_largest_number ut_0179_largest_number.cpp)
+target_link_libraries(ut_0179_largest_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0179_largest_number)
+
+add_executable(ut_0045_jump_games_i_i ut_0045_jump_games_i_i.cpp)
+target_link_libraries(ut_0045_jump_games_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0045_jump_games_i_i)
+
+add_executable(ut_0004_media_arrays ut_0004_media_arrays.cpp)
+target_link_libraries(ut_0004_media_arrays ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0004_media_arrays)
+
+add_executable(ut_0206_reverse_list ut_0206_reverse_list.cpp)
+target_link_libraries(ut_0206_reverse_list ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0206_reverse_list)
+
+add_executable(ut_0113_path_sum_i_i ut_0113_path_sum_i_i.cpp)
+target_link_libraries(ut_0113_path_sum_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0113_path_sum_i_i)
+
+add_executable(ut_0035_search_insert_position ut_0035_search_insert_position.cpp)
+target_link_libraries(ut_0035_search_insert_position ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0035_search_insert_position)
+
+add_executable(ut_0039_combination_sum ut_0039_combination_sum.cpp)
+target_link_libraries(ut_0039_combination_sum ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0039_combination_sum)
+
+add_executable(ut_0273_integerto_english_words ut_0273_integerto_english_words.cpp)
+target_link_libraries(ut_0273_integerto_english_words ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0273_integerto_english_words)
+
+add_executable(ut_0202_happy_number ut_0202_happy_number.cpp)
+target_link_libraries(ut_0202_happy_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0202_happy_number)
+
+add_executable(ut_0051_n_queens ut_0051_n_queens.cpp)
+target_link_libraries(ut_0051_n_queens ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0051_n_queens)
+
+add_executable(ut_0088_merge_sorted_array ut_0088_merge_sorted_array.cpp)
+target_link_libraries(ut_0088_merge_sorted_array ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0088_merge_sorted_array)
+
+add_executable(ut_0283_move_zeros ut_0283_move_zeros.cpp)
+target_link_libraries(ut_0283_move_zeros ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0283_move_zeros)
+
+add_executable(ut_0009_palindrome_number ut_0009_palindrome_number.cpp)
+target_link_libraries(ut_0009_palindrome_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0009_palindrome_number)
+
+add_executable(ut_0066_plus_one ut_0066_plus_one.cpp)
+target_link_libraries(ut_0066_plus_one ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0066_plus_one)
+
+add_executable(ut_0215_kth_large_num ut_0215_kth_large_num.cpp)
+target_link_libraries(ut_0215_kth_large_num ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0215_kth_large_num)
+
+add_executable(ut_0522_longest_uncommon_subsequence_i_i ut_0522_longest_uncommon_subsequence_i_i.cpp)
+target_link_libraries(ut_0522_longest_uncommon_subsequence_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0522_longest_uncommon_subsequence_i_i)
+
+add_executable(ut_0013_roman2_int ut_0013_roman2_int.cpp)
+target_link_libraries(ut_0013_roman2_int ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0013_roman2_int)
+
+add_executable(ut_0011_container_most_water ut_0011_container_most_water.cpp)
+target_link_libraries(ut_0011_container_most_water ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0011_container_most_water)
+
+add_executable(ut_0017_combination_of_phone_number ut_0017_combination_of_phone_number.cpp)
+target_link_libraries(ut_0017_combination_of_phone_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0017_combination_of_phone_number)
+
+add_executable(ut_0048_rotate_image ut_0048_rotate_image.cpp)
+target_link_libraries(ut_0048_rotate_image ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0048_rotate_image)
+
+add_executable(ut_0059_spiral_matrix_i_i ut_0059_spiral_matrix_i_i.cpp)
+target_link_libraries(ut_0059_spiral_matrix_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0059_spiral_matrix_i_i)
+
+add_executable(ut_0008_string2_int ut_0008_string2_int.cpp)
+target_link_libraries(ut_0008_string2_int ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0008_string2_int)
+
+add_executable(ut_0010_regular_matching ut_0010_regular_matching.cpp)
+target_link_libraries(ut_0010_regular_matching ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0010_regular_matching)
+
+add_executable(ut_0274_h_index ut_0274_h_index.cpp)
+target_link_libraries(ut_0274_h_index ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0274_h_index)
+
+add_executable(ut_0532_diff_pairs_in_array ut_0532_diff_pairs_in_array.cpp)
+target_link_libraries(ut_0532_diff_pairs_in_array ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0532_diff_pairs_in_array)
+
+add_executable(ut_0859_buddy_strings ut_0859_buddy_strings.cpp)
+target_link_libraries(ut_0859_buddy_strings ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0859_buddy_strings)
+
+add_executable(ut_0099_recover_binary_search_tree ut_0099_recover_binary_search_tree.cpp)
+target_link_libraries(ut_0099_recover_binary_search_tree ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0099_recover_binary_search_tree)
+
+add_executable(ut_0046_permutation ut_0046_permutation.cpp)
+target_link_libraries(ut_0046_permutation ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0046_permutation)
+
+add_executable(ut_0050_pow_x_n ut_0050_pow_x_n.cpp)
+target_link_libraries(ut_0050_pow_x_n ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0050_pow_x_n)
+
+add_executable(ut_0012_int2_roman ut_0012_int2_roman.cpp)
+target_link_libraries(ut_0012_int2_roman ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0012_int2_roman)
+
+add_executable(ut_0006_zigzag_conversion ut_0006_zigzag_conversion.cpp)
+target_link_libraries(ut_0006_zigzag_conversion ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0006_zigzag_conversion)
+
+add_executable(ut_9999_reverse_list ut_9999_reverse_list.cpp)
+target_link_libraries(ut_9999_reverse_list ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_9999_reverse_list)
+
+add_executable(ut_0043_multiply_strings ut_0043_multiply_strings.cpp)
+target_link_libraries(ut_0043_multiply_strings ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0043_multiply_strings)
+
+add_executable(ut_0002_add_two_number ut_0002_add_two_number.cpp)
+target_link_libraries(ut_0002_add_two_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0002_add_two_number)
+
+add_executable(ut_0086_partition_list ut_0086_partition_list.cpp)
+target_link_libraries(ut_0086_partition_list ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0086_partition_list)
+
+add_executable(ut_0707_design_linked_list ut_0707_design_linked_list.cpp)
+target_link_libraries(ut_0707_design_linked_list ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0707_design_linked_list)
+
+add_executable(ut_0032_parentheses ut_0032_parentheses.cpp)
+target_link_libraries(ut_0032_parentheses ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0032_parentheses)
+
+add_executable(ut_0067_add_binary ut_0067_add_binary.cpp)
+target_link_libraries(ut_0067_add_binary ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0067_add_binary)
+
+add_executable(ut_0097_interleaving_string ut_0097_interleaving_string.cpp)
+target_link_libraries(ut_0097_interleaving_string ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0097_interleaving_string)
+
+add_executable(ut_0095_unique_bin_search_trees_i_i ut_0095_unique_bin_search_trees_i_i.cpp)
+target_link_libraries(ut_0095_unique_bin_search_trees_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0095_unique_bin_search_trees_i_i)
+
+add_executable(ut_0029_divide_two_integer ut_0029_divide_two_integer.cpp)
+target_link_libraries(ut_0029_divide_two_integer ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0029_divide_two_integer)
+
+add_executable(ut_0047_permutation_i_i ut_0047_permutation_i_i.cpp)
+target_link_libraries(ut_0047_permutation_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0047_permutation_i_i)
+
+add_executable(ut_0027_remove_element ut_0027_remove_element.cpp)
+target_link_libraries(ut_0027_remove_element ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0027_remove_element)
+
+add_executable(ut_0257_bin_tree_paths ut_0257_bin_tree_paths.cpp)
+target_link_libraries(ut_0257_bin_tree_paths ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0257_bin_tree_paths)
+
+add_executable(ut_0075_sort_colors ut_0075_sort_colors.cpp)
+target_link_libraries(ut_0075_sort_colors ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0075_sort_colors)
+
+add_executable(ut_0003_longest_substr ut_0003_longest_substr.cpp)
+target_link_libraries(ut_0003_longest_substr ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0003_longest_substr)
+
+add_executable(ut_0020_valid_parentheses ut_0020_valid_parentheses.cpp)
+target_link_libraries(ut_0020_valid_parentheses ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0020_valid_parentheses)
+
+add_executable(ut_0710_random_pickwith_blacklist ut_0710_random_pickwith_blacklist.cpp)
+target_link_libraries(ut_0710_random_pickwith_blacklist ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0710_random_pickwith_blacklist)
+
+add_executable(ut_0007_reverse_int ut_0007_reverse_int.cpp)
+target_link_libraries(ut_0007_reverse_int ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0007_reverse_int)
+
+add_executable(ut_0090_subsets_i_i ut_0090_subsets_i_i.cpp)
+target_link_libraries(ut_0090_subsets_i_i ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0090_subsets_i_i)
+
+add_executable(ut_0287_findthe_duplicate_number ut_0287_findthe_duplicate_number.cpp)
+target_link_libraries(ut_0287_findthe_duplicate_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0287_findthe_duplicate_number)
+
+add_executable(ut_0018_four_sum ut_0018_four_sum.cpp)
+target_link_libraries(ut_0018_four_sum ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0018_four_sum)
+
+add_executable(ut_0057_insert_interval ut_0057_insert_interval.cpp)
+target_link_libraries(ut_0057_insert_interval ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0057_insert_interval)
+
+add_executable(ut_0078_subsets ut_0078_subsets.cpp)
+target_link_libraries(ut_0078_subsets ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0078_subsets)
+
+add_executable(ut_0022_create_parentheses ut_0022_create_parentheses.cpp)
+target_link_libraries(ut_0022_create_parentheses ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0022_create_parentheses)
+
+add_executable(ut_0065_valid_number ut_0065_valid_number.cpp)
+target_link_libraries(ut_0065_valid_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0065_valid_number)
+
+add_executable(ut_0049_group_anagrams ut_0049_group_anagrams.cpp)
+target_link_libraries(ut_0049_group_anagrams ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0049_group_anagrams)
+
+add_executable(ut_0173_b_s_t_iterator ut_0173_b_s_t_iterator.cpp)
+target_link_libraries(ut_0173_b_s_t_iterator ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0173_b_s_t_iterator)
+
+add_executable(ut_0069_sqrt_int ut_0069_sqrt_int.cpp)
+target_link_libraries(ut_0069_sqrt_int ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0069_sqrt_int)
+
+add_executable(ut_0053_max_sub_array ut_0053_max_sub_array.cpp)
+target_link_libraries(ut_0053_max_sub_array ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0053_max_sub_array)
+
+add_executable(ut_0005_palindrome ut_0005_palindrome.cpp)
+target_link_libraries(ut_0005_palindrome ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0005_palindrome)
+
+add_executable(ut_0200_numberof_islands ut_0200_numberof_islands.cpp)
+target_link_libraries(ut_0200_numberof_islands ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0200_numberof_islands)
+
+add_executable(ut_0041_first_missing_positive ut_0041_first_missing_positive.cpp)
+target_link_libraries(ut_0041_first_missing_positive ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0041_first_missing_positive)
+
+add_executable(ut_0100_same_tree ut_0100_same_tree.cpp)
+target_link_libraries(ut_0100_same_tree ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0100_same_tree)

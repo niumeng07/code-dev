@@ -1,9 +1,0 @@
-import os
-env = Environment(CC='g++',CCFLAGS="-std=c++11")
-cpppath=["/usr/local/include"]
-libpath=["/usr/local/lib/", "/usr/lib", "/usr/libexec/"]
-libs = ["gtest", "glog", "pthread"]
-env.Append(LIBS = libs)
-env.Append(CPPPATH = cpppath)
-env.Append(LIBPATH = libpath)
-env.Program("prog", "main.cpp")
