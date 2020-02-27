@@ -1,22 +1,18 @@
+#include "0051_n_queens/n_queens.h"
 #include "gtest/gtest.h"
 #include <iostream>
-#include <vector>
-#include "0051_n_queens/n_queens.h"
 #include <time.h>
+#include <vector>
 using namespace std;
-int main(int argc, char **argv)
-{
-    NQueens su;
-	clock_t start, end;
-	start = clock();
-    vector<vector<string> > res = su.solveNQueens(6);
-	end = clock();
-    for(auto vec : res)
-    {
-        for (auto x : vec)
-            cout << x << ", ";
-        cout << endl;
-    }
-	cout << "Time used: " << end - start << endl;
-    return 0;
+TEST(n_queens, test0) {
+  clock_t start, end;
+  start = clock();
+  vector<vector<string>> res = NQueens().solveNQueens(6);
+  end = clock();
+  std::cout << "Time used: " << end - start << std::endl;
+}
+
+int main(int argc, char **argv) {
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }

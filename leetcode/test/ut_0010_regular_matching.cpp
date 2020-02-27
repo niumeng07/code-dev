@@ -1,25 +1,26 @@
-#include "gtest/gtest.h"
 #include "0010_regular_matching/regular_matching.h"
+#include "gtest/gtest.h"
 #include <iostream>
 using namespace std;
 
-int main(int argc, char **argv)
-{
-    RegularMatching su;
-    cout << "re: " << su.isMatch("ab", ".*c")<< endl;
-    cout << "re: " << su.isMatch("", "..*")<< endl;
-    cout << "re: " << su.isMatch("a", ".*..a*")<< endl;
-    cout << "re: " << su.isMatch("aaa", "ab*a")<< endl;
-    cout << "re: " << su.isMatch("aaa", ".a")<< endl;
-    cout << "re: " << su.isMatch("aa", ".*")<< endl;
-    cout << "re: " << su.isMatch("aa", "a") << endl;
-    cout << "re: " << su.isMatch("aa", "aa")<< endl;
-    cout << "re: " << su.isMatch("aaa", "aa")<< endl;
-    cout << "re: " << su.isMatch("aa", "a*")<< endl;
-    cout << "re: " << su.isMatch("ab", ".*")<< endl;
-    cout << "re: " << su.isMatch("aab", "c*a*b*")<< endl;
-    return 0;
+TEST(regular_matching, tets0) {
+  EXPECT_TRUE(RegularMatching().isMatch("ab", ".*"));
+  EXPECT_TRUE(RegularMatching().isMatch("aa", ".*"));
+  EXPECT_TRUE(RegularMatching().isMatch("aa", "aa"));
+  EXPECT_TRUE(RegularMatching().isMatch("aa", "a*"));
+  EXPECT_TRUE(RegularMatching().isMatch("ab", ".*"));
+  EXPECT_TRUE(RegularMatching().isMatch("aab", "c*a*b*"));
 }
-// aaa, ab*a
-// aa, ab*
-//
+TEST(regular_matching, tets1) {
+  EXPECT_FALSE(RegularMatching().isMatch("ab", ".*c"));
+  EXPECT_FALSE(RegularMatching().isMatch("", "..*"));
+  EXPECT_FALSE(RegularMatching().isMatch("a", ".*..a*"));
+  EXPECT_FALSE(RegularMatching().isMatch("aaa", "ab*a"));
+  EXPECT_FALSE(RegularMatching().isMatch("aaa", ".a"));
+  EXPECT_FALSE(RegularMatching().isMatch("aa", "a"));
+  EXPECT_FALSE(RegularMatching().isMatch("aaa", "aa"));
+}
+int main(int argc, char **argv) {
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
