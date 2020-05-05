@@ -1,0 +1,12 @@
+#!/usr/local/bin/bash
+if [ $# -ne 1 ];then
+    echo "usage:"
+    echo "  ./run class.java"
+    exit 0
+fi
+
+filename=$1
+
+javac $filename
+
+java ${filename%.*}
