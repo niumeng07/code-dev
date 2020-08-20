@@ -4,7 +4,7 @@
 .ccls-cache/
 .clangd/
 .vscode/
-.ccls
 .metals
 compile_commands.json
 build
+test/java/*.class

@@ -1,0 +1,4 @@
+#!/usr/local/bin/bash
+g++ -std=c++11 $1  -o binary
+./binary
+/bin/rm -f binary

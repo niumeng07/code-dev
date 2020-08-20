@@ -1,0 +1,3 @@
+[submodule "leetcode/include/googletest"]
+	path = leetcode/include/googletest
+	url = https://github.com/google/googletest

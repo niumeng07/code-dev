@@ -295,3 +295,11 @@ gtest_discover_tests(ut_0041_first_missing_positive)
 add_executable(ut_0100_same_tree ut_0100_same_tree.cpp)
 target_link_libraries(ut_0100_same_tree ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0100_same_tree)
+
+add_executable(ut_0701_insert_binary_tree ut_0701_insert_binary_tree.cpp)
+target_link_libraries(ut_0701_insert_binary_tree  ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0701_insert_binary_tree)
+
+add_executable(ut_0703_kth_largest_element_in_a_stream ut_0703_kth_largest_element_in_a_stream.cpp)
+target_link_libraries(ut_0703_kth_largest_element_in_a_stream ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0703_kth_largest_element_in_a_stream)
