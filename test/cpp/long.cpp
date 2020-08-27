@@ -4,6 +4,8 @@
 int main(int argc, char *argv[])
 {
 
+  double min = std::numeric_limits<double>::min();
+  std::cout << min << std::endl;
   // long x = (std::numeric_limits<long>::max)();
   // uint64_t y = (std::numeric_limits<uint64_t>::max)();
   // std::cout << x << std::endl;
