@@ -78,11 +78,16 @@ void test5() {
   }
 }
 
+void test6() {
+    map<int, map<int, int> > x;
+    x[0][0] = 1;
+}
+
 int main(int argc, char* argv[]) {
   // test();
   // test2();
   // test3();
   // test4();
-  test5();
+  test6();
   return 0;
 }
