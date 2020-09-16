@@ -55,9 +55,34 @@ void test3() {
   // std::cout << z[1] << std::endl;  // const map/unordered_map can't get value by [] operator.
   // std::cout << y[1] << std::endl;
 }
+
+class TestClass {
+public:
+  int t;
+  int *t2;
+};
+void test4() {
+  std::unordered_map<int, TestClass> x;
+  TestClass y = x[0];
+  cout << y.t << endl;
+  cout << *(y.t2) << endl;
+}
+
+void test5() { 
+  std::map<int, int> x{{1, 1}};
+  auto iter = x.find(1);
+  if (iter != x.end()) {
+    cout << iter->second << endl;
+  } else {
+    cout << 0 << endl;
+  }
+}
+
 int main(int argc, char* argv[]) {
   // test();
   // test2();
-  test3();
+  // test3();
+  // test4();
+  test5();
   return 0;
 }

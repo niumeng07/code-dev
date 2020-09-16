@@ -2,6 +2,8 @@
  * @brief 判断是否为循环数
  */
 #include <iostream>
+#include <limits>
+
 using namespace std;
 
 class PalindromeNumber {
@@ -24,7 +26,7 @@ public:
   }
 
   bool isPalindromeUint64(uint64_t x) {
-    uint64_t big_number = 10000000000000000000;
+    uint64_t big_number = std::numeric_limits<uint64_t>::max();
     uint64_t y = 0;
     uint32_t b = 0;
     uint32_t one = x % 10;

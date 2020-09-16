@@ -10,7 +10,9 @@ int main(int argc, char* argv[]) {
   vv.push_back({3, 2, 3});
   vv.push_back({8, 2, 3});
 
-  std::vector<vector<int>> vv2;
+  std::vector<vector<int>> vv2 = vv;
+  vv2.push_back({1, 2, 3});
+
   for (const auto& v : vv) {
     vv2.push_back(v);
   }
@@ -22,5 +24,7 @@ int main(int argc, char* argv[]) {
   for (std::vector<vector<int>>::iterator it = vv.begin(); it != vv.end(); ++it) {
     std::cout << (*it)[0] << endl;
   }
+
+
   return 0;
 }

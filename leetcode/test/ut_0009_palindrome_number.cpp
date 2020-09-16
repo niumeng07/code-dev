@@ -19,7 +19,7 @@ TEST(palindrome_number, test1) {
   EXPECT_EQ(PalindromeNumber().isPalindromeUint64(1), true);
   EXPECT_TRUE(PalindromeNumber(true).isPalindromeUint64(12321));
   EXPECT_TRUE(PalindromeNumber().isPalindromeUint64(0));
-  EXPECT_TRUE(PalindromeNumber().isPalindromeUint64(11111432500523411111));
+  EXPECT_TRUE(PalindromeNumber().isPalindromeUint64((uint64_t)11111432500523411111));
 }
 
 int main(int argc, char **argv) {
