@@ -42,37 +42,34 @@
 
 class BitwiseANDNumRange {
 public:
-  bool isEven(int x) {
-    if (x % 2 == 0)
-      return true;
-    else
-      return false;
-  }
-  int rangeBitwiseAndTimeExc(int m, int n) {
-    int bitwiseand = 2147483647;
-    for (int i = m; i <= n; i++) {
-      bitwiseand = bitwiseand & i;
+    bool isEven(int x) {
+        if (x % 2 == 0)
+            return true;
+        else
+            return false;
     }
-    return bitwiseand;
-  }
-  int rangeBitwiseAndTime(int m, int n) {
-    if (n > m)
-      return 0;
-    if (n == m)
-      return m;
-    int result = 0;
-    int index = 0;
-    for (int i = m; i <= n; i++) {
-      if (m == 0 && n == 0)
-        break;
-      if (isEven(i)) {
-        result = result | (1 << index);
-        index++;
-        continue;
-      }
+    int rangeBitwiseAndTimeExc(int m, int n) {
+        int bitwiseand = 2147483647;
+        for (int i = m; i <= n; i++) {
+            bitwiseand = bitwiseand & i;
+        }
+        return bitwiseand;
     }
-    return 0;
-  }
+    int rangeBitwiseAndTime(int m, int n) {
+        if (n > m) return 0;
+        if (n == m) return m;
+        int result = 0;
+        int index = 0;
+        for (int i = m; i <= n; i++) {
+            if (m == 0 && n == 0) break;
+            if (isEven(i)) {
+                result = result | (1 << index);
+                index++;
+                continue;
+            }
+        }
+        return 0;
+    }
 };
 
 /*

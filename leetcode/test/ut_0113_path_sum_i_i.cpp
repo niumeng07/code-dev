@@ -1,9 +1,9 @@
-#include "gtest/gtest.h"
 #include <iostream>
-#include "0113_path_sum_i_i/path_sum_i_i.h"
 
-int main(int argc, char **argv)
-{ 
+#include "0113_path_sum_i_i/path_sum_i_i.h"
+#include "gtest/gtest.h"
+
+int main(int argc, char **argv) {
     PathSumII su;
     /*
      *        0
@@ -26,10 +26,8 @@ int main(int argc, char **argv)
     noder.left = &noderl;
     noder.right = &noderr;
     vector<vector<int> > res = su.pathSum(root, 8);
-    for(auto vec : res)
-    {
-        for( auto x : vec)
-            cout << x << " ";
+    for (auto vec : res) {
+        for (auto x : vec) cout << x << " ";
         cout << endl;
     }
     return 0;

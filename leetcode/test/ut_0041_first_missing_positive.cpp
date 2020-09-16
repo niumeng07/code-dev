@@ -1,14 +1,15 @@
-#include "gtest/gtest.h"
-#include <iostream>
-#include "0041_first_missing_positive/first_missing_positive.h"
-#include <vector>
 #include <time.h>
 
+#include <iostream>
+#include <vector>
+
+#include "0041_first_missing_positive/first_missing_positive.h"
+#include "gtest/gtest.h"
+
 using namespace std;
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     clock_t start, end, s2, e2;
-    vector<int> nums({ 1,2,2,1,3,1,0,4,0 });
+    vector<int> nums({1, 2, 2, 1, 3, 1, 0, 4, 0});
     nums = {0};
     nums = {0};
     FirstMissingPositive su;

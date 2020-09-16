@@ -22,28 +22,27 @@ using namespace std;
 
 class CreateParentheses {
 public:
-  vector<string> generateParenthesis(int n) {
-    vector<string> ret;
-    this->generate(ret, 0, 0, n, "");
-    return ret;
-  }
+    vector<string> generateParenthesis(int n) {
+        vector<string> ret;
+        this->generate(ret, 0, 0, n, "");
+        return ret;
+    }
 
 private:
-  void generate(vector<string> &ret, int left, int right, int n, string s);
+    void generate(vector<string> &ret, int left, int right, int n, string s);
 };
 
 void CreateParentheses::generate(vector<string> &ret, int left, int right,
                                  int n, string s) {
-  if (left == n && left == right)
-    ret.emplace_back(s);
-  if (left == n && left != right)
-    this->generate(ret, left, right + 1, n, s + ")");
+    if (left == n && left == right) ret.emplace_back(s);
+    if (left == n && left != right)
+        this->generate(ret, left, right + 1, n, s + ")");
 
-  if (left < n && left == right)
-    this->generate(ret, left + 1, right, n, s + "(");
-  if (left < n && left != right) {
-    this->generate(ret, left + 1, right, n, s + "(");
-    this->generate(ret, left, right + 1, n, s + ")");
-  }
-  return;
+    if (left < n && left == right)
+        this->generate(ret, left + 1, right, n, s + "(");
+    if (left < n && left != right) {
+        this->generate(ret, left + 1, right, n, s + "(");
+        this->generate(ret, left, right + 1, n, s + ")");
+    }
+    return;
 }

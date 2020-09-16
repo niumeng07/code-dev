@@ -1,12 +1,11 @@
-#include <vector>
 #include <algorithm>
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void dfs(vector<int>& nums, vector<vector<int> > &result, vector<int> &tmp, int index)
-{
-    for(int i = index; i < nums.size(); i++ )
-    {
+void dfs(vector<int>& nums, vector<vector<int>>& result, vector<int>& tmp,
+         int index) {
+    for (int i = index; i < nums.size(); i++) {
         tmp.push_back(nums[i]);
         result.push_back(tmp);
         dfs(nums, result, tmp, i + 1);
@@ -16,11 +15,12 @@ void dfs(vector<int>& nums, vector<vector<int> > &result, vector<int> &tmp, int 
 class Subsets {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int> > results;
+        vector<vector<int>> results;
         vector<int> tmp;
         results.push_back(tmp);
         dfs(nums, results, tmp, 0);
-        //results.erase( unique(results.begin(), results.end() ), results.end() );
+        // results.erase( unique(results.begin(), results.end() ), results.end()
+        // );
         return results;
     }
 };

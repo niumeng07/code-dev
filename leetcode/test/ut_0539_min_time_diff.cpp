@@ -1,10 +1,10 @@
-#include "gtest/gtest.h"
 #include <string>
 #include <vector>
-#include "0539_min_time_diff/min_time_diff.h"
 
-int main(int argc, char **argv)
-{
+#include "0539_min_time_diff/min_time_diff.h"
+#include "gtest/gtest.h"
+
+int main(int argc, char **argv) {
     MinTimeDiff su;
     std::vector<string> vec;
     vec.push_back("01:01");

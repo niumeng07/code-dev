@@ -5,30 +5,30 @@ using namespace std;
 
 class KthLargest {
 public:
-  vector<int> nums;
-  int k;
-  KthLargest(int k, vector<int> &nums) {
-    std::sort(nums.begin(), nums.end(), std::greater<int>());
-    while (nums.size() > k) {
-      nums.pop_back();
+    vector<int> nums;
+    int k;
+    KthLargest(int k, vector<int> &nums) {
+        std::sort(nums.begin(), nums.end(), std::greater<int>());
+        while (nums.size() > k) {
+            nums.pop_back();
+        }
+        this->nums = nums;
+        this->k = k;
+        return;
     }
-    this->nums = nums;
-    this->k = k;
-    return;
-  }
 
-  int add(int val) {
-    for (vector<int>::iterator it = nums.begin(); it != nums.end(); it++) {
-      if (val > *it) {
-        nums.insert(it, val);
-        break;
-      }
+    int add(int val) {
+        for (vector<int>::iterator it = nums.begin(); it != nums.end(); it++) {
+            if (val > *it) {
+                nums.insert(it, val);
+                break;
+            }
+        }
+        if (nums.size() > k) {
+            nums.pop_back();
+        }
+        return nums.back();
     }
-    if (nums.size() > k) {
-      nums.pop_back();
-    }
-    return nums.back();
-  }
 };
 
 /**

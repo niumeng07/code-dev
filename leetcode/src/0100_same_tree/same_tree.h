@@ -34,48 +34,49 @@
  */
 #include <iostream>
 struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 class SameTree {
 public:
-  bool isSameTree(TreeNode *p, TreeNode *q) {
-    if (p == NULL && q == NULL)
-      return true;
-    if (p != NULL && q != NULL) {
-      if (p->val == q->val)
-        return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
-      else
-        return false;
-    } else
-      return false;
-  }
-};
-
-template <typename T> class Node {
-public:
-  T val;
-  Node<T> *left, *right;
-  Node(T x) : val(x), left(NULL), right(NULL) {}
-};
-
-template <typename T> class MirrorTree {
-public:
-  bool isMirrorTree(Node<T> *root) {
-    return this->isSameTree(root->left, root->right);
-  }
-  bool isSameTree(Node<T> *left, Node<T> *right) {
-    if (left == NULL) {
-      return right == NULL;
-    } else if (right == NULL) {
-      return left == NULL;
+    bool isSameTree(TreeNode *p, TreeNode *q) {
+        if (p == NULL && q == NULL) return true;
+        if (p != NULL && q != NULL) {
+            if (p->val == q->val)
+                return isSameTree(p->left, q->left) &&
+                       isSameTree(p->right, q->right);
+            else
+                return false;
+        } else
+            return false;
     }
-    return left->val == right->val &&
-           this->isSameTree(left->left, left->right) &&
-           this->isSameTree(right->left, right->right);
-  }
 };
 
+template <typename T>
+class Node {
+public:
+    T val;
+    Node<T> *left, *right;
+    Node(T x) : val(x), left(NULL), right(NULL) {}
+};
+
+template <typename T>
+class MirrorTree {
+public:
+    bool isMirrorTree(Node<T> *root) {
+        return this->isSameTree(root->left, root->right);
+    }
+    bool isSameTree(Node<T> *left, Node<T> *right) {
+        if (left == NULL) {
+            return right == NULL;
+        } else if (right == NULL) {
+            return left == NULL;
+        }
+        return left->val == right->val &&
+               this->isSameTree(left->left, left->right) &&
+               this->isSameTree(right->left, right->right);
+    }
+};

@@ -24,18 +24,16 @@ using namespace std;
 
 class SearchInsertPosition {
 public:
-  int searchInsert_Review(vector<int> &nums, int target) {
-    for (uint32_t i = 0; i < nums.size(); i++) {
-      if (nums[i] >= target)
-        return i;
+    int searchInsert_Review(vector<int> &nums, int target) {
+        for (uint32_t i = 0; i < nums.size(); i++) {
+            if (nums[i] >= target) return i;
+        }
+        return nums.size();
     }
-    return nums.size();
-  }
 
-  int searchInsert(vector<int> &nums, int target) {
-    for (int i = 0; i < nums.size(); i++)
-      if (!(nums[i] < target))
-        return i;
-    return nums.size();
-  }
+    int searchInsert(vector<int> &nums, int target) {
+        for (int i = 0; i < nums.size(); i++)
+            if (!(nums[i] < target)) return i;
+        return nums.size();
+    }
 };

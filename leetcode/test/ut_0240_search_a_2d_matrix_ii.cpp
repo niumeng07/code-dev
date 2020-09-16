@@ -1,7 +1,8 @@
-#include "0240_search_a_2d_matrix_ii/search_a_2d_matrix_ii.h"
-#include "gtest/gtest.h"
 #include <iostream>
 #include <vector>
+
+#include "0240_search_a_2d_matrix_ii/search_a_2d_matrix_ii.h"
+#include "gtest/gtest.h"
 
 using namespace std;
 
@@ -73,8 +74,7 @@ TEST(search_a_2d_matrix_ii, test2) {
     EXPECT_EQ(Solution().searchMatrixMN(matrix5, 5), true);
 }
 
-
 int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

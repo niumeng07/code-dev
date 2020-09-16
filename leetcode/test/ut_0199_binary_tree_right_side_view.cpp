@@ -1,6 +1,7 @@
+#include <iostream>
+
 #include "0199.binary_tree_right_side_view/binary_tree_right_side_view.h"
 #include "gtest/gtest.h"
-#include <iostream>
 using namespace std;
 
 // TEST(regular_matching, tets0) {
@@ -9,7 +10,6 @@ using namespace std;
 // TEST(regular_matching, tets1) {
 //   EXPECT_FALSE(RegularMatching().isMatch("aaa", "aa"));
 // }
-
 
 TEST(binary_tree_right_side_view, test0) {
     TreeNode* root = new TreeNode(1);
@@ -24,7 +24,7 @@ TEST(binary_tree_right_side_view, test0) {
     EXPECT_EQ(Solution().rightSideView(nullptr), expected);
 }
 
-int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+int main(int argc, char** argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

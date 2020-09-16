@@ -5,5 +5,5 @@ using namespace std;
 
 class PerfectSquares {
 public:
-  int process(int i) { return 0; }
+    int process(int i) { return 0; }
 };

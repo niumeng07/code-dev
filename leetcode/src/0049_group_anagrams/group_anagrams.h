@@ -24,40 +24,40 @@ using namespace std;
 bool sfun(vector<string> &a, vector<string> &b) { return a.size() < b.size(); }
 class GroupAnagrams {
 public:
-  vector<vector<string>> groupAnagrams(vector<string> &strs) {
-    vector<vector<string>> res;
+    vector<vector<string>> groupAnagrams(vector<string> &strs) {
+        vector<vector<string>> res;
 
-    map<string, vector<string>> m;
-    vector<string> tmp;
+        map<string, vector<string>> m;
+        vector<string> tmp;
 
-    for (auto word : strs) {
-      sort(word.begin(), word.end());
-      m[word] = tmp;
+        for (auto word : strs) {
+            sort(word.begin(), word.end());
+            m[word] = tmp;
+        }
+        string st;
+        for (auto word : strs) {
+            st = word;
+            sort(st.begin(), st.end());
+            m[st].push_back(word);
+        }
+        for (auto iter = m.begin(); iter != m.end(); iter++) {
+            sort(iter->second.begin(), iter->second.end());
+            res.push_back(std::move(iter->second));
+        }
+        sort(res.begin(), res.end(), sfun);
+        return res;
     }
-    string st;
-    for (auto word : strs) {
-      st = word;
-      sort(st.begin(), st.end());
-      m[st].push_back(word);
-    }
-    for (auto iter = m.begin(); iter != m.end(); iter++) {
-      sort(iter->second.begin(), iter->second.end());
-      res.push_back(std::move(iter->second));
-    }
-    sort(res.begin(), res.end(), sfun);
-    return res;
-  }
 
-  vector<vector<string>> groupAnagramsRv(vector<string> &strs) {
-    vector<vector<string>> res;
-    unordered_map<string, vector<string>> m;
-    for (auto str : strs) {
-      sort(str.begin(), str.end());
-      m[str].push_back(str);
+    vector<vector<string>> groupAnagramsRv(vector<string> &strs) {
+        vector<vector<string>> res;
+        unordered_map<string, vector<string>> m;
+        for (auto str : strs) {
+            sort(str.begin(), str.end());
+            m[str].push_back(str);
+        }
+        for (auto v : m) {
+            res.push_back(v.second);
+        }
+        return res;
     }
-    for (auto v : m) {
-      res.push_back(v.second);
-    }
-    return res;
-  }
 };

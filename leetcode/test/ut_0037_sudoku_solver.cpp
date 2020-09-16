@@ -1,12 +1,12 @@
-#include "gtest/gtest.h"
 #include <iostream>
 #include <vector>
+
 #include "0037_sudoku_solver/sudoku_solver.h"
+#include "gtest/gtest.h"
 
 using namespace std;
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     vector<vector<char> > board;
     vector<char> row({'5', '3', '.', '.', '7', '.', '.', '.', '.'});
     board.push_back(row);

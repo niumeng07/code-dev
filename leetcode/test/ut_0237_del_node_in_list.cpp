@@ -1,9 +1,10 @@
-#include "gtest/gtest.h"
 #include <iostream>
+
 #include "0237_del_node_in_list/del_node_in_list.h"
+#include "gtest/gtest.h"
 using namespace std;
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
     ListNode* node = new ListNode(1);
     node->next = new ListNode(2);
     node->next->next = new ListNode(3);

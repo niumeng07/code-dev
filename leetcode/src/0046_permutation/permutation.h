@@ -1,14 +1,14 @@
-#include <vector>
 #include <algorithm>
+#include <vector>
 using namespace std;
 class Permutation {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int> > res;
+        vector<vector<int>> res;
         sort(nums.begin(), nums.end());
-        do{
+        do {
             res.push_back(nums);
-        }while(std::next_permutation(nums.begin(), nums.end()));
+        } while (std::next_permutation(nums.begin(), nums.end()));
         return res;
     }
 };

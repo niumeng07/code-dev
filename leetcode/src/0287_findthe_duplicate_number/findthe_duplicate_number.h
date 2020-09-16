@@ -26,54 +26,55 @@
  *
  */
 
-#include <iostream>
 #include <math.h>
+
+#include <iostream>
 #include <vector>
 using namespace std;
 class FindtheDuplicateNumber {
 public:
-  int findSingleRv(vector<int> &v) {
-    vector<int> ret({0, 0, 0, 0, 1, 1, 1, 1});
+    int findSingleRv(vector<int> &v) {
+        vector<int> ret({0, 0, 0, 0, 1, 1, 1, 1});
 
-    for (int i = 0; i < v.size(); i++) {
-      ret[0] = ret[0] & v[i];
-      ret[1] = ret[1] | v[i];
-      ret[2] = ret[2] ^ v[i];
-      ret[4] = ret[4] & v[i];
-      ret[5] = ret[5] | v[i];
-      ret[6] = ret[6] ^ v[i];
-    }
-    return ret[2];
-  }
-
-  int findSingleNum(vector<int> &nums) {
-    int ret = 0;
-    for (auto num : nums) {
-      ret = ret ^ num;
-    }
-    return ret;
-  }
-  int findDuplicate(vector<int> &nums) {
-    for (int num : nums) {
-      int index = abs(num) - 1;
-      if (nums[index] < 0) {
-        return abs(num);
-      }
-      nums[index] *= -1;
+        for (int i = 0; i < v.size(); i++) {
+            ret[0] = ret[0] & v[i];
+            ret[1] = ret[1] | v[i];
+            ret[2] = ret[2] ^ v[i];
+            ret[4] = ret[4] & v[i];
+            ret[5] = ret[5] | v[i];
+            ret[6] = ret[6] ^ v[i];
+        }
+        return ret[2];
     }
 
-    return -1;
-  }
-  // 这个方法在数字大于40时就出错了
-  int findDuplicate2(vector<int> &nums) {
-    uint64_t ret = 0;
-    for (auto num : nums) {
-      if ((ret & (1 << num)) > 0) {
-        ret = num;
-        break;
-      }
-      ret = (ret | (1 << num));
+    int findSingleNum(vector<int> &nums) {
+        int ret = 0;
+        for (auto num : nums) {
+            ret = ret ^ num;
+        }
+        return ret;
     }
-    return ret;
-  }
+    int findDuplicate(vector<int> &nums) {
+        for (int num : nums) {
+            int index = abs(num) - 1;
+            if (nums[index] < 0) {
+                return abs(num);
+            }
+            nums[index] *= -1;
+        }
+
+        return -1;
+    }
+    // 这个方法在数字大于40时就出错了
+    int findDuplicate2(vector<int> &nums) {
+        uint64_t ret = 0;
+        for (auto num : nums) {
+            if ((ret & (1 << num)) > 0) {
+                ret = num;
+                break;
+            }
+            ret = (ret | (1 << num));
+        }
+        return ret;
+    }
 };

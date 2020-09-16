@@ -1,6 +1,7 @@
-#include "gtest/gtest.h"
 #include <iostream>
+
 #include "0859_buddy_strings/buddy_strings.h"
+#include "gtest/gtest.h"
 
 int main(int argc, char **argv) {
     BuddyStrings su;

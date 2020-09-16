@@ -32,12 +32,10 @@ using namespace std;
 
 class DistinctSubSequence {
 public:
-  int numDistinct(string s, string t) {
-    if (t.size() > s.size())
-      return 0;
-    if (t.size() == s.size())
-      return 1;
-    int i = 0, j = 0;
-    return 0;
-  }
+    int numDistinct(string s, string t) {
+        if (t.size() > s.size()) return 0;
+        if (t.size() == s.size()) return 1;
+        int i = 0, j = 0;
+        return 0;
+    }
 };

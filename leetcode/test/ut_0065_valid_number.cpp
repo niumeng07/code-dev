@@ -1,11 +1,11 @@
-#include "gtest/gtest.h"
 #include <iostream>
+
 #include "0065_valid_number/valid_number.h"
+#include "gtest/gtest.h"
 
 using namespace std;
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     ValidNumber su;
     cout << "1 a   " << su.isNumber("1 a") << endl;
     cout << "2e10   " << su.isNumber("2e10") << endl;

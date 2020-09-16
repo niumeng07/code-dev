@@ -21,48 +21,51 @@
 using namespace std;
 class ContainerMostWater {
 public:
-  // 两层循环超时
-  int maxArea1(vector<int> &height) {
-    int max = 0;
-    for (int i = 0; i < height.size(); i++) {
-      for (int j = height.size() - 1; j > i; j--) {
-        int curr = ((j - i) * min(height[i], height[j]));
-        max = (curr > max) ? curr : max;
-      }
+    // 两层循环超时
+    int maxArea1(vector<int> &height) {
+        int max = 0;
+        for (int i = 0; i < height.size(); i++) {
+            for (int j = height.size() - 1; j > i; j--) {
+                int curr = ((j - i) * min(height[i], height[j]));
+                max = (curr > max) ? curr : max;
+            }
+        }
+        return max;
     }
-    return max;
-  }
 
-  int maxArea(vector<int> &height) {
-    int left = 0, right = height.size() - 1, m = 0, h = 0;
-    bool t = true;
-    while (left < right) {
-      if (height[left] <= height[right]) {
-        h = height[left];
-        t = true;
-        m = m > (right - left) * h ? m : (right - left) * h;
-        left++;
-      } else {
-        h = height[right];
-        t = false;
-        m = m > (right - left) * h ? m : (right - left) * h;
-        right--;
-      }
+    int maxArea(vector<int> &height) {
+        int left = 0, right = height.size() - 1, m = 0, h = 0;
+        bool t = true;
+        while (left < right) {
+            if (height[left] <= height[right]) {
+                h = height[left];
+                t = true;
+                m = m > (right - left) * h ? m : (right - left) * h;
+                left++;
+            } else {
+                h = height[right];
+                t = false;
+                m = m > (right - left) * h ? m : (right - left) * h;
+                right--;
+            }
+        }
+        return m;
     }
-    return m;
-  }
 
-  int maxAreaReview(vector<int> &height) {
-    int left = 0, right = height.size() - 1;
-    int m = (right - left) * min(height[right], height[left]);
-    int m2;
-    while (left < right) {
-      m2 = (right - 1 - left) * min(height[right - 1], height[left]) >
-                   (right - left - 1) * min(height[right], height[left + 1])
-               ? (right - 1 - left) * min(height[right - 1], height[left])
-               : (right - left - 1) * min(height[right], height[left + 1]);
-      m = m2 > m ? m2 : m;
+    int maxAreaReview(vector<int> &height) {
+        int left = 0, right = height.size() - 1;
+        int m = (right - left) * min(height[right], height[left]);
+        int m2;
+        while (left < right) {
+            m2 = (right - 1 - left) * min(height[right - 1], height[left]) >
+                                 (right - left - 1) *
+                                         min(height[right], height[left + 1])
+                         ? (right - 1 - left) *
+                                   min(height[right - 1], height[left])
+                         : (right - left - 1) *
+                                   min(height[right], height[left + 1]);
+            m = m2 > m ? m2 : m;
+        }
+        return 0;
     }
-    return 0;
-  }
 };

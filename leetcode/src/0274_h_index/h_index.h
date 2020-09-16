@@ -1,17 +1,15 @@
-#include <vector>
-#include <iostream>
 #include <algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
 class HIndex {
 public:
     int hIndex(vector<int>& citations) {
-        if( citations.size() == 0)
-            return 0;
-        sort(citations.begin(),citations.end());
-        for(int i=0;i<citations.size();i++)
-        {
-            if(citations[i]>=citations.size()-i) 
-                return citations.size()-i;
+        if (citations.size() == 0) return 0;
+        sort(citations.begin(), citations.end());
+        for (int i = 0; i < citations.size(); i++) {
+            if (citations[i] >= citations.size() - i)
+                return citations.size() - i;
         }
         /*
         int start = 0, end = citations.size() - 1;
@@ -19,7 +17,7 @@ public:
         while(end - start > 1)
         {
             middle = (start + end)/2;
-            if(citations[middle] < citations.size()-middle) 
+            if(citations[middle] < citations.size()-middle)
                 start = middle;
             else
                 end = middle;

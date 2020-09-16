@@ -80,17 +80,17 @@ public:
         if (m == 0) return false;
         int n = matrix[0].size();
         if (n == 0) return false;
-        
+
         m--;
         n = 0;
         while (m >= 0 && n < matrix[0].size()) {
-            if (matrix[m][n] == target) return true;
+            if (matrix[m][n] == target)
+                return true;
             else if (matrix[m][n] > target)
                 m--;
             else
                 n++;
         }
         return false;
-
     }
 };

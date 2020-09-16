@@ -1,7 +1,7 @@
-#include <vector>
 #include <iostream>
-#include <set>
 #include <list>
+#include <set>
+#include <vector>
 
 using namespace std;
 
@@ -17,7 +17,7 @@ public:
         for (int i = 0; i < nums.size(); i++) {
             for (int j = i + 1; j < nums.size(); j++) {
                 temp.clear();
-                if(nums[i] - nums[j] == k) {
+                if (nums[i] - nums[j] == k) {
                     temp.insert(nums[i]);
                     temp.insert(nums[j]);
                     store.insert(temp);
