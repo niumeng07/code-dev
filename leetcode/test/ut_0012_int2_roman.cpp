@@ -4,8 +4,11 @@
 #include "gtest/gtest.h"
 using namespace std;
 
+TEST(int2_roman, test0) {
+    EXPECT_EQ("CXXIII", Int2Roman().intToRoman(123));
+}
+
 int main(int argc, char **argv) {
-    Int2Roman su;
-    su.intToRoman(123);
-    return 0;
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

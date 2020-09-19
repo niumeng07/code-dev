@@ -4,12 +4,15 @@
 #include "gtest/gtest.h"
 using namespace std;
 
+TEST(roman2_int, test0) {
+    EXPECT_EQ(3, Roman2Int().romanToInt("III"));
+    EXPECT_EQ(99, Roman2Int().romanToInt("XCIX"));
+    EXPECT_EQ(90, Roman2Int().romanToInt("XC"));
+    EXPECT_EQ(3333, Roman2Int().romanToInt("MMMCCCXXXIII"));
+    EXPECT_EQ(0, Roman2Int().romanToInt("ABC"));
+}
+
 int main(int argc, char **argv) {
-    Roman2Int su;
-    cout << su.romanToInt("III") << "\n"
-         << su.romanToInt("XCIX") << "\n"
-         << su.romanToInt("XC") << "\n"
-         << su.romanToInt("MMMCCCXXXIII") << "\n"
-         << su.romanToInt("ABC") << "\n";
-    return 0;
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
