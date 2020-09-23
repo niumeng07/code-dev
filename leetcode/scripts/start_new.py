@@ -9,6 +9,7 @@ if not os.path.exists(src_path):
     print("mkdir ", src_path)
     os.mkdir(src_path)
 
+block_name = "_".join(args[1:])
 src_file_name = "_".join(args[1:]) + ".h"
 src_file = src_path + "/" + src_file_name
 if not os.path.exists(src_file):
@@ -32,12 +33,12 @@ if not os.path.exists(test_file):
         "#include <vector>\n",
         "#include \"{}/".format("_".join(args)) + "_".join(args[1:]) + ".h" + "\"\n",
         "\n",
-        "void test0() {\n"
+        "TEST(%s0, test0) {\n" % (block_name),
         "}\n",
         "\n",
         "int main(int argc, char **argv) {\n",
-        "test0();\n",
-        "return 0;\n"
+        "    testing::InitGoogleTest(&argc, argv);\n",
+        "    return RUN_ALL_TESTS();\n",
         "}\n"
     ]
     f.writelines(lines)
