@@ -327,3 +327,7 @@ gtest_discover_tests(ut_0019_remove_nth_node_from_end_of_list)
 add_executable(ut_0023_merge_k_sorted_lists ut_0023_merge_k_sorted_lists.cpp)
 target_link_libraries(ut_0023_merge_k_sorted_lists ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0023_merge_k_sorted_lists)
+
+add_executable(ut_0044_wildcard_matching ut_0044_wildcard_matching.cpp)
+target_link_libraries(ut_0044_wildcard_matching ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0044_wildcard_matching)

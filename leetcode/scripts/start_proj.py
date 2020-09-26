@@ -6,14 +6,12 @@ args = [item.lower() for item in args]
 args[0] = args[0].strip('.').zfill(4)
 src_path = "src/" + "_".join(args)
 if not os.path.exists(src_path):
-    print("mkdir ", src_path)
     os.mkdir(src_path)
 
 block_name = "_".join(args[1:])
 src_file_name = "_".join(args[1:]) + ".h"
 src_file = src_path + "/" + src_file_name
 if not os.path.exists(src_file):
-    print('create', src_file)
     f = open(src_file, 'w')
     lines = [
         "#include <iostream>\n"
@@ -25,7 +23,6 @@ if not os.path.exists(src_file):
 test_binary = "ut_" + args[0] + "_" + "_".join(args[1:])
 test_file = "test/{}.cpp".format(test_binary)
 if not os.path.exists(test_file):
-    print("create", test_file)
     f = open(test_file, 'w')
     lines = [
         "#include \"gtest/gtest.h\"\n",
@@ -53,3 +50,6 @@ with open("test/CMakeLists.txt", "a+") as f:
         "gtest_discover_tests({})\n".format(test_binary)
     ]
     f.writelines(lines)
+
+
+print(' '.join([test_file, src_file]))
