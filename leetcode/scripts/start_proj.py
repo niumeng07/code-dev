@@ -25,9 +25,9 @@ test_file = "test/{}.cpp".format(test_binary)
 if not os.path.exists(test_file):
     f = open(test_file, 'w')
     lines = [
-        "#include \"gtest/gtest.h\"\n",
         "#include <string>\n",
         "#include <vector>\n",
+        "#include \"gtest/gtest.h\"\n",
         "#include \"{}/".format("_".join(args)) + "_".join(args[1:]) + ".h" + "\"\n",
         "\n",
         "TEST(%s0, test0) {\n" % (block_name),
