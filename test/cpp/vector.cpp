@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-int main(int argc, char* argv[]) {
+void test1() {
   rand();
   clock_t start, end;
   start = clock();
@@ -23,5 +23,16 @@ int main(int argc, char* argv[]) {
   end = clock();
   cout << end - start << endl;
   unordered_map<int, int> umap;
+
+}
+
+void test2() {
+  vector<int> x;
+  x.reserve(0);
+  x.insert(x.begin() + 100, 0);
+}
+
+int main(int argc, char* argv[]) {
+  test2();
   return 0;
 }

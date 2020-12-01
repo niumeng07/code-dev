@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <time.h>
 
 using namespace std;
 
@@ -83,11 +84,71 @@ void test6() {
     x[0][0] = 1;
 }
 
+void test7(){
+  map<int, int> mp;
+  mp[1] = 1;
+  mp[2] = 2;
+  for (auto &pair1: mp) {
+    mp[100] = pair1.second;
+    cout << pair1.first;
+  }
+  cout << endl;
+}
+
+void test8() {
+  map<int, int> mp;
+  mp[0]++;
+  mp[1]++;
+  for (auto &pair: mp) {
+    cout << pair.first << ":" << pair.second << endl;
+  }
+}
+
+void test9() {
+    clock_t start = clock();
+    for (size_t i = 0; i < 10000; ++i) {
+        map<int, int> mp;
+        mp[0] = 0;
+        mp[1] = 1;
+        mp[2] = 2;
+    }
+    clock_t end = clock();
+    cout << end - start << endl;
+
+    start = clock();
+    map<int, int> mp;
+    for (size_t i = 0; i < 10000; ++i) {
+        mp.clear();
+        mp[0] = 0;
+        mp[1] = 1;
+        mp[2] = 2;
+    }
+
+    end = clock();
+    cout << end - start << endl;
+
+    start = clock();
+    map<int, int> mp2{{0, 23}, {1, 11}, {2, 22}};
+    for (size_t i = 0; i < 10000; ++i) {
+        mp2[0] = 0;
+        mp2[1] = 1;
+        mp2[2] = 2;
+        mp2[0] = 0;
+        mp2[1] = 0;
+        mp2[2] = 0;
+    }
+    end = clock();
+    cout << end - start << endl;
+}
+
 int main(int argc, char* argv[]) {
   // test();
   // test2();
   // test3();
   // test4();
-  test6();
+  // test6();
+  // test7();
+  // test8();
+  test9();
   return 0;
 }
