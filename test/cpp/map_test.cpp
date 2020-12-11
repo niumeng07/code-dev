@@ -141,6 +141,10 @@ void test9() {
     cout << end - start << endl;
 }
 
+void test10(int &x) {
+  x = 1;
+}
+
 int main(int argc, char* argv[]) {
   // test();
   // test2();
@@ -149,6 +153,11 @@ int main(int argc, char* argv[]) {
   // test6();
   // test7();
   // test8();
-  test9();
+  // test9();
+  map<int, map<int, int>> m;
+  test10(m[0][10]);
+  for (auto pair1 : m[0]) {
+      cout << pair1.first << ", " << pair1.second << endl;
+  }
   return 0;
 }

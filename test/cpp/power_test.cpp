@@ -8,9 +8,7 @@ float random_float(float min, float max) {
 	return ((float)rand() / RAND_MAX) * (max - min) + min;
 }
 
-using namespace std;
-int main(int argc, char *argv[])
-{
+void test1() {
     float a;
     float b;
     clock_t t1, t2;
@@ -41,5 +39,11 @@ int main(int argc, char *argv[])
     cout << elp1 << endl;
     cout << elp2 << endl;
     outf.close();
+}
+using namespace std;
+int main(int argc, char *argv[])
+{
+    std::cout << pow(-1.0, 0.1) << std::endl;
+    test1();
     return 0;
 }
