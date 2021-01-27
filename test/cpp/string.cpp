@@ -31,6 +31,10 @@ void test2() {
     cout << x.empty() << endl;
 }
 
+void test3(string& x) {
+    cout << x << endl;
+}
+
 int main() {
     // test1();
     // test2();

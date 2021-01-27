@@ -45,9 +45,19 @@ void test3() {
   cout << random() % 100 << endl;
 }
 
+void test4() {
+  srand(time(NULL));
+  cout << random() << endl;
+}
+
 int main(int argc, char *argv[]) {
   // test1();
-  test2();
-  test3();
+  // test2();
+  // test3();
+  test4();
+  test4();
+  test4();
+  test4();
+  test4();
   return 0;
 }

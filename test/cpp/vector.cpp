@@ -32,7 +32,14 @@ void test2() {
   x.insert(x.begin() + 100, 0);
 }
 
+void test3() {
+  vector<int> x;
+  x.push_back(1);
+  cout << x.size() << endl;
+  x.pop_back();
+  cout << x.size() << endl;
+}
 int main(int argc, char* argv[]) {
-  test2();
+  test3();
   return 0;
 }

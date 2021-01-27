@@ -6,9 +6,8 @@
 using namespace std;
 using namespace boost;
 
-
-int main() {
-    ifstream is("test.txt");
+void test1() {
+        ifstream is("test.txt");
     char buffer[256];
     while(is){
         is.getline(buffer, 1000);
@@ -34,6 +33,18 @@ int main() {
         cout << item << "\t";
     }
     cout << endl;
+
+}
+
+void test2() {
+    string x = "aa\001bb";
+    vector<string> y;
+    boost::split(y, x, "\001");
+}
+
+int main() {
+    // test1();
+    test2();
     return 0;
 }
 
