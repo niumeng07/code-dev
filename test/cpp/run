@@ -1,5 +1,5 @@
 #!/usr/local/bin/bash
 # g++ -std=c++11 -I /usr//local/include/boost -I /opt/OpenBLAS/include -L /opt/OpenBLAS/lib/ -lopenblas $1
-g++ -std=c++11 -I /usr/local/Cellar/boost/1.74.0/include $1
+g++ -std=c++11 -I /usr/local/Cellar/boost/1.75.0_1/include $1
 ./a.out
 /bin/rm -f a.out

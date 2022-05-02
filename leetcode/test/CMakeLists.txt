@@ -335,3 +335,7 @@ gtest_discover_tests(ut_0044_wildcard_matching)
 add_executable(ut_0148_sort_list ut_0148_sort_list.cpp)
 target_link_libraries(ut_0148_sort_list ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0148_sort_list)
+
+add_executable(ut_0042_trapping_rain_water ut_0042_trapping_rain_water.cpp)
+target_link_libraries(ut_0042_trapping_rain_water ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0042_trapping_rain_water)
