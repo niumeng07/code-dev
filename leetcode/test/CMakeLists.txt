@@ -339,3 +339,7 @@ gtest_discover_tests(ut_0148_sort_list)
 add_executable(ut_0042_trapping_rain_water ut_0042_trapping_rain_water.cpp)
 target_link_libraries(ut_0042_trapping_rain_water ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0042_trapping_rain_water)
+
+add_executable(ut_0407_trapping_rain_water_ii ut_0407_trapping_rain_water_ii.cpp)
+target_link_libraries(ut_0407_trapping_rain_water_ii ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0407_trapping_rain_water_ii)
