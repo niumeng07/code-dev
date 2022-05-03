@@ -343,3 +343,15 @@ gtest_discover_tests(ut_0042_trapping_rain_water)
 add_executable(ut_0407_trapping_rain_water_ii ut_0407_trapping_rain_water_ii.cpp)
 target_link_libraries(ut_0407_trapping_rain_water_ii ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0407_trapping_rain_water_ii)
+
+add_executable(ut_0031_next_permutation ut_0031_next_permutation.cpp)
+target_link_libraries(ut_0031_next_permutation ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0031_next_permutation)
+
+add_executable(ut_0028_implement_strstr ut_0028_implement_strstr.cpp)
+target_link_libraries(ut_0028_implement_strstr ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0028_implement_strstr)
+
+add_executable(ut_0021_merge_two_sorted_lists ut_0021_merge_two_sorted_lists.cpp)
+target_link_libraries(ut_0021_merge_two_sorted_lists ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0021_merge_two_sorted_lists)

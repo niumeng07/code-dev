@@ -31,6 +31,7 @@ if not os.path.exists(test_file):
         "#include \"{}/".format("_".join(args)) + "_".join(args[1:]) + ".h" + "\"\n",
         "\n",
         "TEST(%s0, test0) {\n" % (block_name),
+        "    EXPECT_EQ(Solution().(), );\n",
         "}\n",
         "\n",
         "int main(int argc, char **argv) {\n",
