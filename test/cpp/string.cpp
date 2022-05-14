@@ -35,8 +35,15 @@ void test3(string& x) {
     cout << x << endl;
 }
 
+void test3() {
+    string x = "abc";
+    cout << x.substr(1, 2) << endl;
+    cout << x << endl;
+}
+
 int main() {
     // test1();
     // test2();
+    test3();
     return 0;
 }
