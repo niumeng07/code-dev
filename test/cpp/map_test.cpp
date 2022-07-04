@@ -5,6 +5,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -167,7 +168,23 @@ void test12() {
     cout << endl;
 }
 
+void test13() {
+    std::unordered_map<int, int> x;
+    for (int i = 0; i < 10000; i++) {
+        x.insert(std::make_pair(i, i));
+    }
+    clock_t start = clock();
+    std::unordered_map<int, int> y = x;
+    cout << clock() - start << endl;
+    std::unordered_map<int, int> z;
+    z.reserve(10000);
+    start = clock_t();
+    z.insert(x.begin(), x.end());
+    cout << clock() - start << endl;
+}
+
 int main(int argc, char* argv[]) {
-    test12();
+    // test12();
+    test13();
     return 0;
 }
