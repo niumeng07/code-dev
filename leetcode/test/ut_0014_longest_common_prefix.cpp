@@ -7,27 +7,32 @@
 
 TEST(longest_common_prefix, test0) {
     vector<string> input({"flower","flow","flight"});
-    EXPECT_EQ(Solution().longestCommonPrefix(input), "fl");
+    EXPECT_EQ(Solution2().longestCommonPrefix(input), "fl");
 }
 
 TEST(longest_common_prefix, test1) {
     vector<string> input({"dog","rececar","car"});
-    EXPECT_EQ(Solution().longestCommonPrefix(input), "");
+    EXPECT_EQ(Solution2().longestCommonPrefix(input), "");
 }
 
 TEST(longest_common_prefix, test2) {
     vector<string> input({});
-    EXPECT_EQ(Solution().longestCommonPrefix(input), "");
+    EXPECT_EQ(Solution2().longestCommonPrefix(input), "");
 }
 
 TEST(longest_common_prefix, test3) {
     vector<string> input({"a", "a", "a", "a"});
-    EXPECT_EQ(Solution().longestCommonPrefix(input), "a");
+    EXPECT_EQ(Solution2().longestCommonPrefix(input), "a");
 }
 
 TEST(longest_common_prefix, test4) {
     vector<string> input({"a"});
-    EXPECT_EQ(Solution().longestCommonPrefix(input), "a");
+    EXPECT_EQ(Solution2().longestCommonPrefix(input), "a");
+}
+
+TEST(longest_common_prefix, test5) {
+    vector<string> input({"ab", "a"});
+    EXPECT_EQ(Solution2().longestCommonPrefix(input), "a");
 }
 
 int main(int argc, char **argv) {

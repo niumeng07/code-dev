@@ -337,6 +337,14 @@ add_executable(ut_0148_sort_list ut_0148_sort_list.cpp)
 target_link_libraries(ut_0148_sort_list ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0148_sort_list)
 
+add_executable(ut_0300_longest_increasing_subsequence ut_0300_longest_increasing_subsequence.cpp)
+target_link_libraries(ut_0300_longest_increasing_subsequence ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0300_longest_increasing_subsequence)
+
+add_executable(ut_0299_bulls_and_cows ut_0299_bulls_and_cows.cpp)
+target_link_libraries(ut_0299_bulls_and_cows ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0299_bulls_and_cows)
+
 add_executable(ut_0042_trapping_rain_water ut_0042_trapping_rain_water.cpp)
 target_link_libraries(ut_0042_trapping_rain_water ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0042_trapping_rain_water)
