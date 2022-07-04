@@ -31,9 +31,8 @@ public:
         for (int i = 1; i < size1; i++) {
             for (int j = 1; j < size2; j++) {
                 if (word1[i - 1] != word2[j - 1]) {
-                    matrix[i][j] =
-                            1 + this->min(matrix[i - 1][j], matrix[i][j - 1],
-                                          matrix[i - 1][j - 1]);
+                    matrix[i][j] = 1 + min(matrix[i - 1][j], matrix[i][j - 1],
+                                           matrix[i - 1][j - 1]);
                 } else {
                     matrix[i][j] = matrix[i - 1][j - 1];
                 }
