@@ -1,5 +1,6 @@
 # 查找 GTest 库
 find_package(GTest REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 # GTest 的头文件
 include_directories(${GTEST_INCLUDE_DIRS} /usr/local/include/ ../include ../include/Node ../src/)
 link_directories(../lib /usr/local/lib)
@@ -343,3 +344,39 @@ gtest_discover_tests(ut_0300_longest_increasing_subsequence)
 add_executable(ut_0299_bulls_and_cows ut_0299_bulls_and_cows.cpp)
 target_link_libraries(ut_0299_bulls_and_cows ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0299_bulls_and_cows)
+
+add_executable(ut_0042_trapping_rain_water ut_0042_trapping_rain_water.cpp)
+target_link_libraries(ut_0042_trapping_rain_water ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0042_trapping_rain_water)
+
+add_executable(ut_0407_trapping_rain_water_ii ut_0407_trapping_rain_water_ii.cpp)
+target_link_libraries(ut_0407_trapping_rain_water_ii ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0407_trapping_rain_water_ii)
+
+add_executable(ut_0031_next_permutation ut_0031_next_permutation.cpp)
+target_link_libraries(ut_0031_next_permutation ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0031_next_permutation)
+
+add_executable(ut_0028_implement_strstr ut_0028_implement_strstr.cpp)
+target_link_libraries(ut_0028_implement_strstr ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0028_implement_strstr)
+
+add_executable(ut_0021_merge_two_sorted_lists ut_0021_merge_two_sorted_lists.cpp)
+target_link_libraries(ut_0021_merge_two_sorted_lists ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0021_merge_two_sorted_lists)
+
+add_executable(ut_0093_restore_ip_addresses ut_0093_restore_ip_addresses.cpp)
+target_link_libraries(ut_0093_restore_ip_addresses ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0093_restore_ip_addresses)
+
+add_executable(ut_0071_simplify_path ut_0071_simplify_path.cpp)
+target_link_libraries(ut_0071_simplify_path ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0071_simplify_path)
+
+add_executable(ut_0442_find_all_duplicates_in_an_array ut_0442_find_all_duplicates_in_an_array.cpp)
+target_link_libraries(ut_0442_find_all_duplicates_in_an_array ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0442_find_all_duplicates_in_an_array)
+
+add_executable(ut_0072_edit_distance ut_0072_edit_distance.cpp)
+target_link_libraries(ut_0072_edit_distance ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0072_edit_distance)

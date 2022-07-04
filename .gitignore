@@ -9,3 +9,4 @@ compile_commands.json
 build
 test/java/*.class
 .DS_Store
+cmake-build-debug

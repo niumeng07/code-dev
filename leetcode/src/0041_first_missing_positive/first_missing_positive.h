@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class FirstMissingPositive {
+class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
         sort(nums.begin(), nums.end());
