@@ -384,3 +384,23 @@ gtest_discover_tests(ut_0072_edit_distance)
 add_executable(ut_0056_merge_intervals ut_0056_merge_intervals.cpp)
 target_link_libraries(ut_0056_merge_intervals ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0056_merge_intervals)
+
+add_executable(ut_0187_dupilicates_dna ut_0187_dupilicates_dna.cpp)
+target_link_libraries(ut_0187_dupilicates_dna ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0187_dupilicates_dna)
+
+add_executable(ut_0221_maximal_square ut_0221_maximal_square.cpp)
+target_link_libraries(ut_0221_maximal_square ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0221_maximal_square)
+
+add_executable(ut_0263_ugly_number ut_0263_ugly_number.cpp)
+target_link_libraries(ut_0263_ugly_number ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0263_ugly_number)
+
+add_executable(ut_0274_h-index ut_0274_h-index.cpp)
+target_link_libraries(ut_0274_h-index ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0274_h-index)
+
+add_executable(ut_0045_jump_game_ii ut_0045_jump_game_ii.cpp)
+target_link_libraries(ut_0045_jump_game_ii ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0045_jump_game_ii)
