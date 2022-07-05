@@ -380,3 +380,7 @@ gtest_discover_tests(ut_0442_find_all_duplicates_in_an_array)
 add_executable(ut_0072_edit_distance ut_0072_edit_distance.cpp)
 target_link_libraries(ut_0072_edit_distance ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0072_edit_distance)
+
+add_executable(ut_0056_merge_intervals ut_0056_merge_intervals.cpp)
+target_link_libraries(ut_0056_merge_intervals ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0056_merge_intervals)
