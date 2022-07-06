@@ -404,3 +404,15 @@ gtest_discover_tests(ut_0274_h-index)
 add_executable(ut_0045_jump_game_ii ut_0045_jump_game_ii.cpp)
 target_link_libraries(ut_0045_jump_game_ii ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_0045_jump_game_ii)
+
+add_executable(ut_0543_diameter_of_binary_tree ut_0543_diameter_of_binary_tree.cpp)
+target_link_libraries(ut_0543_diameter_of_binary_tree ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0543_diameter_of_binary_tree)
+
+add_executable(ut_0124_binary_tree_maximum_path_sum ut_0124_binary_tree_maximum_path_sum.cpp)
+target_link_libraries(ut_0124_binary_tree_maximum_path_sum ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0124_binary_tree_maximum_path_sum)
+
+add_executable(ut_0101_symmetric_tree ut_0101_symmetric_tree.cpp)
+target_link_libraries(ut_0101_symmetric_tree ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0101_symmetric_tree)
