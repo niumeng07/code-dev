@@ -20,8 +20,8 @@ class Solution {
 public:
     TreeNode* buildTree(vector<int>& nums, int left_start, int left_end,
                         int right_start, int right_end) {
+        int middle = (left_end - left_start) / 2;
         TreeNode* root = new TreeNode(nums[middle], nullptr, nullptr);
-        middle = (left_end - left_start) / 2;
         root->left = buildTree(nums, left_start, middle - 1, middle + 1,
                                left_end);
         middle = (right_end - right_start) / 2;

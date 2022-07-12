@@ -456,3 +456,7 @@ gtest_discover_tests(ut_0472_concatenated_words)
 add_executable(ut_2260_minimum_consecutive_cards_to_pick_up ut_2260_minimum_consecutive_cards_to_pick_up.cpp)
 target_link_libraries(ut_2260_minimum_consecutive_cards_to_pick_up ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_2260_minimum_consecutive_cards_to_pick_up)
+
+add_executable(ut_0493_reverse_pairs ut_0493_reverse_pairs.cpp)
+target_link_libraries(ut_0493_reverse_pairs ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0493_reverse_pairs)

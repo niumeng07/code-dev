@@ -3,12 +3,7 @@ using namespace std;
 
 class Solution {
 public:
-    /*
-     *
-     * */
-    int jump(vector<int>& nums) {
-        //
+    int reversePairs(vector<int>& nums) {
         return 0;
     }
-    void dfs();
 };
