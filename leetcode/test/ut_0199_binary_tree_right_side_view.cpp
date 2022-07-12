@@ -17,6 +17,7 @@ TEST(binary_tree_right_side_view, test0) {
 
     vector<int> res = Solution().rightSideView(root);
 
+    Solution().rightSee(root);
     vector<int> expected({1, 2});
     EXPECT_EQ(res, expected);
 

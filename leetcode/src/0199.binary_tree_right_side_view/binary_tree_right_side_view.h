@@ -32,7 +32,40 @@ struct TreeNode {
 
 class Solution {
 public:
-    void rightSee(TreeNode *root, vector<int> &res) {}
+    vector<int> rightSee(TreeNode *root) {
+        vector<int> res;
+        if (root == nullptr) {
+            return res;
+        }
+        vector<TreeNode*> nodeQueue;
+        nodeQueue.push_back(root);
+        res.push_back(root->val);
+        int size = nodeQueue.size();
+        int start = 0;
+        while (true) {
+            bool stop = true;
+            for (int i = start; i < start + size; i++) {
+                TreeNode* temp = nodeQueue[i];
+                if (temp->left != nullptr) {
+                    nodeQueue.push_back(temp->left);
+                    stop = false;
+                }
+                if (temp->right != nullptr) {
+                    nodeQueue.push_back(temp->right);
+                    stop = false;
+                }
+            }
+            // 终止条件
+            if (stop) {
+                break;
+            }
+            res.push_back(nodeQueue.back()->val);  // 最后的节点一定是最右的节点
+            start = start + size;
+            size = nodeQueue.size() - start;
+        }
+        return res;
+    }
+
     vector<int> rightSideView(TreeNode *root) {
         if (root == nullptr) return {};
         vector<int> res({root->val});
