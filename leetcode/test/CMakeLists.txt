@@ -444,3 +444,7 @@ gtest_discover_tests(ut_1423_maximum_points_you_can_obtain_from_cards)
 add_executable(ut_1031_maximum_sum_of_two_non-overlapping_subarrays ut_1031_maximum_sum_of_two_non-overlapping_subarrays.cpp)
 target_link_libraries(ut_1031_maximum_sum_of_two_non-overlapping_subarrays ${GTEST_BOTH_LIBRARIES} pthread )
 gtest_discover_tests(ut_1031_maximum_sum_of_two_non-overlapping_subarrays)
+
+add_executable(ut_0493_reverse_pairs ut_0493_reverse_pairs.cpp)
+target_link_libraries(ut_0493_reverse_pairs ${GTEST_BOTH_LIBRARIES} pthread )
+gtest_discover_tests(ut_0493_reverse_pairs)
