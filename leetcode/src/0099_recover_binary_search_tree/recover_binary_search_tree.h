@@ -23,7 +23,7 @@ class RecoverBinarySearchTree {
 public:
     void recoverTree(TreeNode* root) {
         vector<TreeNode*> head;
-        travelTree(root, head);
+        travelTree(root, head);  // 左,根,右 遍历
         printVector(head);
         int min = 0;
         int max = head.size() - 1;
@@ -45,4 +45,8 @@ public:
         travelTree(root, head);
         printVector(head);
     }
+};
+
+class RecoverBinarySearchTree2 {
+    // 找到左子树的最大结点,找到右子树的最小结点
 };

@@ -28,13 +28,42 @@ public:
         if (head == nullptr or head->next == nullptr) {
             return head;
         }
-        
-        ListNode *last= head;
-        ListNode *iter= head->next;
-        ListNode *link = iter->next;
+
+        ListNode* last = head;
+        ListNode* iter = head->next;
+        ListNode* link = iter->next;
         iter->next = last;
         last->next = swapPairs(link);
-        
+
         return iter;
+    }
+
+public:
+    // 循环解法
+    ListNode* swapPairs2(ListNode* head) {
+        ListNode* fakeHead = new ListNode(0);
+        fakeHead->next = head;
+
+        // fakeHead(pre), curr, next, nexnex
+        ListNode* pre = fakeHead;  // 需要倒序的区间的前序
+        ListNode* curr = head;
+        // 0   1    2     3       4
+        // pre curr next  nexnex
+        while (curr && curr->next) {
+            // 倒序区间  curr, next
+            ListNode* next = curr->next;
+            ListNode* nexnex = curr->next->next;  // 需要倒序的区间的后续
+
+            curr->next = nullptr;
+            next->next = curr;  // pre ( nullptr <- curr <- next )  nexnex
+            // 把区间和前后连起来
+            pre->next = next;
+            curr->next = nexnex;
+
+            // 重新设置pre, curr
+            pre = curr;  // 注意：这里换过位置了,不是pre=next
+            curr = nexnex;
+        }
+        return fakeHead->next;
     }
 };
