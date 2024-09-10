@@ -7,5 +7,6 @@ include_directories(/usr/local/include/ ../include)
 # lib的路径
 link_directories(../lib /usr/local/lib)
 
-file(GLOB HELLOWORLD_SOURCES "*/*.cpp")
-# add_executable(main main.cpp ${HELLOWORLD_SOURCES})
+file(GLOB SOURCES "*.cpp")
+# add_executable(main main.cpp ${SOURCES})
+add_executable(two_sum two_sum.cpp ${SOURCES})
