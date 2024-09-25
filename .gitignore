@@ -11,3 +11,4 @@ test/java/*.class
 .DS_Store
 cmake-build-debug
 nohup.out
+a.out
