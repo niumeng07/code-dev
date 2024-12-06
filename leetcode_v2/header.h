@@ -1,11 +1,11 @@
+#include <algorithm>
 #include <iostream>
 #include <numeric>
-#include <vector>
+#include <stack>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
-#include <string>
-#include <algorithm>
-#include <stack>
+#include <vector>
 
 using namespace std;
 
@@ -30,7 +30,7 @@ public:
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-template<class T>
+template <class T>
 void print_vector(const vector<T>& nums) {
     for (const auto& item : nums) {
         cout << item << " ";
@@ -38,7 +38,7 @@ void print_vector(const vector<T>& nums) {
     cout << endl;
 }
 
-template<class T>
+template <class T>
 void print_matrix(const vector<vector<T>>& matrix) {
     for (const auto& vec : matrix) {
         print_vector(vec);

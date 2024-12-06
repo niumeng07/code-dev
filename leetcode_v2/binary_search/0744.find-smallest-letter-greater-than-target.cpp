@@ -22,44 +22,43 @@
 // class Solution {
 // public:
 // 如果输入有序可以二分查找
-    char nextGreatestLetter(vector<char>& letters, char target) {
-        char result = '~';
+char nextGreatestLetter(vector<char>& letters, char target) {
+    char result = '~';
 
-        for (int i = 0; i < letters.size(); i++) {
-            if (letters[i] > target) {
-                result = min(result, letters[i]);
-            }
+    for (int i = 0; i < letters.size(); i++) {
+        if (letters[i] > target) {
+            result = min(result, letters[i]);
         }
-
-        if (result == '~') {
-            result = letters[0];
-        }
-
-        return result;
     }
 
-    char nextGreatestLetter2(vector<char>& letters, char target) {
-        char result = letters[0];
-
-        for (int i = 1; i < letters.size(); i++) {
-            if (letters[i] > target && result > target) {
-                result = min(result, letters[i]);
-            } else if (letters[i] > target) {
-                result = letters[i];
-            }
-        }
-
-        return result;
+    if (result == '~') {
+        result = letters[0];
     }
+
+    return result;
+}
+
+char nextGreatestLetter2(vector<char>& letters, char target) {
+    char result = letters[0];
+
+    for (int i = 1; i < letters.size(); i++) {
+        if (letters[i] > target && result > target) {
+            result = min(result, letters[i]);
+        } else if (letters[i] > target) {
+            result = letters[i];
+        }
+    }
+
+    return result;
+}
 
 // };
 
-int main(int argc, char *argv[])
-{
-    vector<char> letters = {'x','x','y','y'};
+int main(int argc, char* argv[]) {
+    vector<char> letters = {'x', 'x', 'y', 'y'};
     // cout << nextGreatestLetter(letters, 'z') << endl;
 
-    letters = {'c','f','j'};
+    letters = {'c', 'f', 'j'};
     cout << nextGreatestLetter(letters, 'c') << endl;
     return 0;
 }

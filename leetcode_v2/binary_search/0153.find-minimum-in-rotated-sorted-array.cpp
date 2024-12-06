@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
     cout << Solution().findMin(nums) << endl;
     nums = {3, 1, 2};
     cout << Solution().findMin(nums) << endl;
-    nums = {2,3,4,5,6,1};
+    nums = {2, 3, 4, 5, 6, 1};
     cout << Solution().findMin(nums) << endl;
     return 0;
 }

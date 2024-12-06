@@ -12,3 +12,4 @@ test/java/*.class
 cmake-build-debug
 nohup.out
 a.out
+__pycache__
