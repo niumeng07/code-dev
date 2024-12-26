@@ -1,5 +1,4 @@
 *.dblite
-*.ipynb
 *.idea
 .ccls-cache/
 .clangd/
